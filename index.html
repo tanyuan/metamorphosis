@@ -9,10 +9,28 @@
         <!-- Bed -->
         <a-asset-item id="bed-mtl" src="./blocks/bed/materials.mtl"></a-asset-item>
         <a-asset-item id="bed-obj" src="./blocks/bed/model.obj"></a-asset-item>
-
         <!-- Night Stand -->
         <a-asset-item id="nightstand-mtl" src="./blocks/nightstand/materials.mtl"></a-asset-item>
         <a-asset-item id="nightstand-obj" src="./blocks/nightstand/model.obj"></a-asset-item>
+        <!-- Toilet -->
+        <a-asset-item id="toilet-mtl" src="./blocks/toilet/materials.mtl"></a-asset-item>
+        <a-asset-item id="toilet-obj" src="./blocks/toilet/model.obj"></a-asset-item>
+        <!-- Toilet Paper -->
+        <a-asset-item id="toilet_paper-mtl" src="./blocks/toilet_paper/materials.mtl"></a-asset-item>
+        <a-asset-item id="toilet_paper-obj" src="./blocks/toilet_paper/model.obj"></a-asset-item>
+        <!-- Door -->
+        <a-asset-item id="door-mtl" src="./blocks/door/materials.mtl"></a-asset-item>
+        <a-asset-item id="door-obj" src="./blocks/door/model.obj"></a-asset-item>
+        <!-- Towel -->
+        <a-asset-item id="towel-mtl" src="./blocks/towel/materials.mtl"></a-asset-item>
+        <a-asset-item id="towel-obj" src="./blocks/towel/model.obj"></a-asset-item>
+        <!-- Water -->
+        <a-asset-item id="water-mtl" src="./blocks/water/materials.mtl"></a-asset-item>
+        <a-asset-item id="water-obj" src="./blocks/water/model.obj"></a-asset-item>
+        <!-- Table -->
+        <a-asset-item id="table-mtl" src="./blocks/table/materials.mtl"></a-asset-item>
+        <a-asset-item id="table-obj" src="./blocks/table/model.obj"></a-asset-item>
+
       </a-assets>
       <!-- Main Scene -->
       <a-plane position="0 0 0" rotation="-90 0 0" width="15" height="15" color="#333333">
@@ -29,7 +47,9 @@
 
         <!-- Room Objects -->
         <a-entity obj-model="obj:#bed-obj;mtl:#bed-mtl;" position="6 -5.5 1" rotation="52 -90 -90" scale="5 5 5"></a-entity>
-        <a-entity obj-model="obj:#nightstand-obj;mtl:#nightstand-mtl;" position="3.5 -6.5 0.5" rotation="0 -90 -90" scale="1 1 1"></a-entity>
+        <a-entity obj-model="obj:#nightstand-obj;mtl:#nightstand-mtl" position="3.75 -7 0.5" rotation="180 -90 -90" scale="0.5 0.5 0.5"></a-entity>
+        <a-entity obj-model="obj:#water-obj;mtl:#water-mtl" position="3.75 -7 1.58" rotation="180 -90 -90" scale="2 2 2"></a-entity>
+        <a-entity obj-model="obj:#table-obj;mtl:#table-mtl;" position="6 -5.5 1" rotation="52 -90 -90" scale="5 5 5"></a-entity>
       </a-plane>
 
       <!-- Bathroom Scene -->
@@ -39,7 +59,12 @@
         <a-box position="-0.5 -3.5 4" geometry="width:7;depth:8" color="#e3e3e3"></a-box>
 
         <!-- Room Door -->
-        <a-box position="-0.5 2.5 3" geometry="depth:6;width:3;height:0.2" color="blue" material="color:#3a4652" animation=""></a-box>
+        <a-box position="-0.5 2.5 3" geometry="depth:6;width:3;height:0.2" material="color:#3a4652" animation=""></a-box>
+
+        <!-- Room Object -->
+        <a-entity obj-model="obj:#toilet-obj;mtl:#toilet-mtl;" position="2 -2 1.5" rotation="90 0 0" scale="5 5 5"></a-entity>
+        <a-entity obj-model="obj:#toilet_paper-obj;mtl:#toilet_paper-mtl;" position="0.85 -2.5 1.5" rotation="-90 -90 -90" scale="1.5 1.5 1.5"></a-entity>
+        <a-entity obj-model="obj:#towel-obj;mtl:#towel-mtl;" position="2.6 0.5 3.5" rotation="-90 -90 -90"></a-entity>
       </a-plane>
 
       <!-- Entrance Scene -->
@@ -47,7 +72,7 @@
         <a-box position="3.5 1 4" rotation="0 0 90" geometry="width:6;depth:8" color="#e3e3e3"></a-box>
 
         <!-- Room Door -->
-        <a-box position="-0.5 -2.5 3" geometry="depth:6;width:3;height:0.2" color="blue" material="color:#3a4652" animation=""></a-box>
+         <a-box position="-0.5 -2.5 3" geometry="depth:6;width:3;height:0.2" material="color:#3a4652" animation=""></a-box>
       </a-plane>
 
       <!-- Sky -->

@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script src="js/aframe/travel-node.js"></script>
+    <script src="js/aframe/travel-node-defaults.js"></script>
+    <script src="js/teleport.js"></script>
+  </head>
+  <body>
+    <a-scene travel-node-default="axis: x,y,z; offsetY: 0.75">
+
+        <!-- Tiles for teleport -->
+        <a-plane position="-5.041 0.1 5.025" rotation="-90 0 0" width="4" height="4" color="#444444" cursor-listener travel-node="transition: move"></a-plane>
+        <a-plane position="-5.041 0.1 10.98" rotation="-90 0 0" width="4" height="4" color="#444444" cursor-listener travel-node="transition: move"></a-plane>
+        <a-plane position="-5.041 0.1 -10.98" rotation="-90 0 0" width="4" height="4" color="#444444" cursor-listener travel-node="transition: move"></a-plane>
+        <a-plane position="-0.397 0.1 5.041" rotation="-90 0 0" width="4" height="4" color="#444444" cursor-listener travel-node="transition: move"></a-plane>
+        <a-plane position="-5.041 0.1 -0.19" rotation="-90 0 0" width="4" height="4" color="#444444" cursor-listener travel-node="transition: move"></a-plane>
+        <a-plane position="-0.346 0.1 -0.19" rotation="-90 0 0" width="4" height="4" color="#444444" cursor-listener travel-node="transition: move"></a-plane>
+        <a-plane position=" 4.472 0.1 -0.19" rotation="-90 0 0" width="4" height="4" color="#444444" cursor-listener travel-node="transition: move"></a-plane>
+        <a-plane position="-5.041 0.100 -4.94" rotation="-90 0 0" width="4" height="4" color="#444444" cursor-listener travel-node="transition: move"></a-plane>
+        <a-plane position="-0.28 0.100 -4.94" rotation="-90 0 0" width="4" height="4" color="#444444" cursor-listener travel-node="transition: move"></a-plane>
+        <a-plane position=" 4.60  0.100 -4.94" rotation="-90 0 0" width="4" height="4" color="#444444" cursor-listener travel-node="transition: move"></a-plane>
+
+      <!-- Assets Management -->
+      <a-assets>
+        <!-- Bed -->
+        <a-asset-item id="bed-mtl" src="./blocks/bed/materials.mtl"></a-asset-item>
+        <a-asset-item id="bed-obj" src="./blocks/bed/model.obj"></a-asset-item>
+        <!-- Night Stand -->
+        <a-asset-item id="nightstand-mtl" src="./blocks/nightstand/materials.mtl"></a-asset-item>
+        <a-asset-item id="nightstand-obj" src="./blocks/nightstand/model.obj"></a-asset-item>
+        <!-- Toilet -->
+        <a-asset-item id="toilet-mtl" src="./blocks/toilet/materials.mtl"></a-asset-item>
+        <a-asset-item id="toilet-obj" src="./blocks/toilet/model.obj"></a-asset-item>
+        <!-- Toilet Paper -->
+        <a-asset-item id="toilet_paper-mtl" src="./blocks/toilet_paper/materials.mtl"></a-asset-item>
+        <a-asset-item id="toilet_paper-obj" src="./blocks/toilet_paper/model.obj"></a-asset-item>
+        <!-- Door -->
+        <a-asset-item id="door-mtl" src="./blocks/door/materials.mtl"></a-asset-item>
+        <a-asset-item id="door-obj" src="./blocks/door/model.obj"></a-asset-item>
+        <!-- Towel -->
+        <a-asset-item id="towel-mtl" src="./blocks/towel/materials.mtl"></a-asset-item>
+        <a-asset-item id="towel-obj" src="./blocks/towel/model.obj"></a-asset-item>
+        <!-- Water -->
+        <a-asset-item id="water-mtl" src="./blocks/water/materials.mtl"></a-asset-item>
+        <a-asset-item id="water-obj" src="./blocks/water/model.obj"></a-asset-item>
+        <!-- Table -->
+        <a-asset-item id="table-mtl" src="./blocks/table/materials.mtl"></a-asset-item>
+        <a-asset-item id="table-obj" src="./blocks/table/model.obj"></a-asset-item>
+
+      </a-assets>
+      <!-- Main Scene -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="15" height="15" color="#333333">
+        <!-- Room Walls -->
+        <a-box position="8 0 4" rotation="0 0 0" geometry="width: 1; height: 17; depth: 8" color="#e3e3e3"></a-box>
+        <a-box position="-8 0 4" rotation="0 0 0" geometry="width: 1; height: 27; depth: 8" color="#e3e3e3"></a-box>
+        <a-box position="2 8 4" rotation="0 0 90" geometry="width: 1; height: 11; depth: 8" color="#e3e3e3"></a-box>
+        <a-box position="2 -8 4" rotation="0 0 90" geometry="width: 1; height: 11; depth: 8" color="#e3e3e3"></a-box>
+
+        <a-box position="-7 -8 4" rotation="0 0 90" geometry="depth:8" color="#e3e3e3"></a-box>
+        <a-box position="-7 8 4" rotation="0 0 90" geometry="depth:8" color="#e3e3e3"></a-box>
+        <a-box position="-5 -8 7" rotation="0 0 90" geometry="height:3;depth:2" color="#e3e3e3"></a-box>
+        <a-box position="-5 8 7" rotation="0 0 90" geometry="depth:2;height:3" color="#e3e3e3"></a-box>
+
+        <!-- Room Objects -->
+        <a-entity obj-model="obj:#bed-obj;mtl:#bed-mtl;" position="6 -5.5 1" rotation="52 -90 -90" scale="5 5 5"></a-entity>
+        <a-entity obj-model="obj:#nightstand-obj;mtl:#nightstand-mtl" position="3.75 -7 0.5" rotation="180 -90 -90" scale="0.5 0.5 0.5"></a-entity>
+        <a-entity obj-model="obj:#water-obj;mtl:#water-mtl" position="3.75 -7 1.58" rotation="180 -90 -90" scale="2 2 2"></a-entity>
+        <a-entity obj-model="obj:#table-obj;mtl:#table-mtl;" position="-6.5 0 2.2" rotation="0 -90 -90" scale="0.8 0.8 0.8"></a-entity>
+      </a-plane>
+
+      <!-- Bathroom Scene -->
+      <a-plane position="-4.5 0 10.5" rotation="-90 0 0" width="6" height="6" color="#333333">
+        <!-- Room Walls -->
+        <a-box position="3.5 -1 4" rotation="0 0 90" geometry="width:6;depth:8" color="#e3e3e3"></a-box>
+        <a-box position="-0.5 -3.5 4" geometry="width:7;depth:8" color="#e3e3e3"></a-box>
+
+        <!-- Room Door -->
+        <a-box position="-0.5 2.5 3" geometry="depth:6;width:3;height:0.2" material="color:#3a4652" animation=""></a-box>
+
+        <!-- Room Object -->
+        <a-entity obj-model="obj:#toilet-obj;mtl:#toilet-mtl;" position="2 -2 1.5" rotation="90 0 0" scale="5 5 5"></a-entity>
+        <a-entity obj-model="obj:#toilet_paper-obj;mtl:#toilet_paper-mtl;" position="0.85 -2.5 1.5" rotation="-90 -90 -90" scale="1.5 1.5 1.5"></a-entity>
+        <a-entity obj-model="obj:#towel-obj;mtl:#towel-mtl;" position="2.6 0.5 3.5" rotation="-90 -90 -90"></a-entity>
+      </a-plane>
+
+      <!-- Entrance Scene -->
+      <a-plane position="-4.5 0 -10.5" rotation="-90 0 0" width="6" height="6" color="#333333">
+        <a-box position="3.5 1 4" rotation="0 0 90" geometry="width:6;depth:8" color="#e3e3e3"></a-box>
+
+        <!-- Room Door -->
+         <a-box position="-0.5 -2.5 3" geometry="depth:6;width:3;height:0.2" material="color:#3a4652" animation=""></a-box>
+      </a-plane>
+
+      <!-- Sky -->
+      <a-sky color="#ECECEC"></a-sky>
+
+      <a-camera position="0 2.5 0">
+        <a-entity id="cursor" position="0 0 -2" cursor geometry="primitive: ring; radiusOuter: 0.06; radiusInner: 0.04" material="color: black">
+        <a-animation begin="click" easing="ease-in" attribute="scale"
+       fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+         <a-animation begin="fusing" easing="ease-in" attribute="scale"
+       fill="forwards" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>

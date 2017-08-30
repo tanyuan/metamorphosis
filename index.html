@@ -30,7 +30,18 @@
         <!-- Table -->
         <a-asset-item id="table-mtl" src="./blocks/table/materials.mtl"></a-asset-item>
         <a-asset-item id="table-obj" src="./blocks/table/model.obj"></a-asset-item>
-
+        <!-- Chair -->
+        <a-asset-item id="chair-mtl" src="./blocks/chair/materials.mtl"></a-asset-item>
+        <a-asset-item id="chair-obj" src="./blocks/chair/model.obj"></a-asset-item>
+        <!-- Plant -->
+        <a-asset-item id="plant-mtl" src="./blocks/plant/materials.mtl"></a-asset-item>
+        <a-asset-item id="plant-obj" src="./blocks/plant/model.obj"></a-asset-item>
+        <!-- Book Shelf -->
+        <a-asset-item id="bookshelf-mtl" src="./blocks/bookshelf/materials.mtl"></a-asset-item>
+        <a-asset-item id="bookshelf-obj" src="./blocks/bookshelf/model.obj"></a-asset-item>
+        <!-- Phone -->
+        <a-asset-item id="phone-mtl" src="./blocks/phone/materials.mtl"></a-asset-item>
+        <a-asset-item id="phone-obj" src="./blocks/phone/model.obj"></a-asset-item>
       </a-assets>
       <!-- Main Scene -->
       <a-plane position="0 0 0" rotation="-90 0 0" width="15" height="15" color="#333333">
@@ -45,11 +56,16 @@
         <a-box position="-5 -8 7" rotation="0 0 90" geometry="height:3;depth:2" color="#e3e3e3"></a-box>
         <a-box position="-5 8 7" rotation="0 0 90" geometry="depth:2;height:3" color="#e3e3e3"></a-box>
 
+        <a-box position="6.1 5 3" geometry="width:2.5;depth:6;height:5" color="#e3e3e3"></a-box>
         <!-- Room Objects -->
         <a-entity obj-model="obj:#bed-obj;mtl:#bed-mtl;" position="6 -5.5 1" rotation="52 -90 -90" scale="5 5 5"></a-entity>
         <a-entity obj-model="obj:#nightstand-obj;mtl:#nightstand-mtl" position="3.75 -7 0.5" rotation="180 -90 -90" scale="0.5 0.5 0.5"></a-entity>
         <a-entity obj-model="obj:#water-obj;mtl:#water-mtl" position="3.75 -7 1.58" rotation="180 -90 -90" scale="2 2 2"></a-entity>
         <a-entity obj-model="obj:#table-obj;mtl:#table-mtl;" position="-6.5 0 2.2" rotation="0 -90 -90" scale="0.8 0.8 0.8"></a-entity>
+        <a-entity obj-model="obj:#chair-obj;mtl:#chair-mtl;" position="-3.5 2 0.5" rotation="0 -180 -30" scale="1.5 1.5 1.5"></a-entity>
+        <a-entity obj-model="obj:#plant-obj;mtl:#plant-mtl;" position="-1.75 6.5 0.8" rotation="90 0 0" scale="3 3 3"></a-entity>
+        <a-entity obj-model="obj:#bookshelf-obj;mtl:#bookshelf-mtl;" position="-0.25 -7 1.3" rotation="90 0 0" scale="2 2 2"></a-entity>
+        <a-entity obj-model="obj:#phone-obj;mtl:#phone-mtl;" position="-5.5 -0.5 2.15" rotation="0 180.02333923010465 -45" scale="0.5 0.5 0.5"></a-entity>
       </a-plane>
 
       <!-- Bathroom Scene -->
@@ -59,7 +75,7 @@
         <a-box position="-0.5 -3.5 4" geometry="width:7;depth:8" color="#e3e3e3"></a-box>
 
         <!-- Room Door -->
-        <a-box position="-0.5 2.5 3" geometry="depth:6;width:3;height:0.2" material="color:#3a4652" animation=""></a-box>
+        <a-box position="0.15 1.5 3" rotation="0 0 60" geometry="depth:6;height:0.2;width:3" material="color:#3a4652" animation=""></a-box>
 
         <!-- Room Object -->
         <a-entity obj-model="obj:#toilet-obj;mtl:#toilet-mtl;" position="2 -2 1.5" rotation="90 0 0" scale="5 5 5"></a-entity>
@@ -72,7 +88,7 @@
         <a-box position="3.5 1 4" rotation="0 0 90" geometry="width:6;depth:8" color="#e3e3e3"></a-box>
 
         <!-- Room Door -->
-         <a-box position="-0.5 -2.5 3" geometry="depth:6;width:3;height:0.2" material="color:#3a4652" animation=""></a-box>
+         <a-box position="0.15 -3.8 3" rotation="0 0 60" geometry="depth:6;height:0.2;width:3" material="color:#3a4652" animation=""></a-box>
       </a-plane>
 
       <!-- Sky -->

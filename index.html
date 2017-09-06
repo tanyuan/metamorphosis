@@ -1,6 +1,7 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script src="js/aframe/aframe-mirror-component.js"></script>
   </head>
   <body>
     <a-scene travel-node-default="axis: x,y,z; offsetY: 0.75">
@@ -47,7 +48,7 @@
 
 
     <!-- Start Scene -->
-    <a-entity id="scene-start">
+    <a-entity id="scene-start" visible="false">
       <a-entity id="light-ambient" light="type: ambient; intensity: 1; color: #BBB"></a-entity>
       <a-entity position="6 3 2" geometry="primitive: plane; height: 1; width: 3.6" material="color:black" text="width: 14; color: white; align: center; value: METAMORPHOSIS"></a-entity>
       <a-entity position="6 1 2" geometry="primitive: plane; height: 1; width: 3.6" material="color:white" text="width: 14; color: black; align: center; value: WAKE UP" onclick="switchToMainScene()"></a-entity>
@@ -55,7 +56,9 @@
     </a-entity>
 
     <!-- Main Scene -->
-    <a-entity id="scene-main" visible="false">
+    <a-entity id="scene-main" visible="true">
+    <a-entity light="type: ambient; color: #BBB"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
 
         <!-- Tiles for teleport -->
         <a-plane position="-5.041 0.1 5.025" rotation="-90 0 0" width="4" height="4" color="#444444" cursor-listener travel-node="transition: move"></a-plane>
@@ -106,6 +109,7 @@
         <a-entity obj-model="obj:#toilet-obj;mtl:#toilet-mtl;" position="2 -2 1.5" rotation="90 0 0" scale="5 5 5"></a-entity>
         <a-entity obj-model="obj:#toilet_paper-obj;mtl:#toilet_paper-mtl;" position="0.85 -2.5 1.5" rotation="-90 -90 -90" scale="1.5 1.5 1.5"></a-entity>
         <a-entity obj-model="obj:#towel-obj;mtl:#towel-mtl;" position="2.6 0.5 3.5" rotation="-90 -90 -90"></a-entity>
+        <a-plane mirror position="-1.5 -0.5 2" rotation="0 90 -90"></a-plane>
       </a-plane>
 
       <!-- Entrance Scene -->
@@ -133,10 +137,7 @@
             <a-animation begin="fusing" easing="ease-in" attribute="scale"
     fill="forwards" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
         </a-entity>
-        <a-entity id="light-point" light="type: point; color: #000; intensity: 0.4" position="0 0 0">
-            <a-animation begin="light-on" attribute="light.color" from="#000" to="#FFF" dur="1000"></a-animation>
-        </a-entity>
-        <a-entity id="water_in_hand" visible="false" obj-model="obj:#water-obj;mtl:#water-mtl" position="-0.45 -0.490 -0.88" rotation="8.3 130 43.6" scale="2 2 2"></a-entity>
+        <a-entity id="water_in_hand" visible="true" obj-model="obj:#water-obj;mtl:#water-mtl" position="-0.45 -0.490 -0.88" rotation="8.3 130 43.6" scale="2 2 2"></a-entity>
       </a-camera>
     </a-scene>
 

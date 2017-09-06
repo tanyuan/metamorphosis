@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A-Frame Mirror Material Component - Basic</title>
+    <meta name="description" content="Basic example for Mirror Material component."></meta>
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <script src="js/aframe/aframe-mirror-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <a-box position="-5 20 5" height="40"></a-box>
+      <a-plane mirror position="4 2.5 -4" height="5" ></a-plane>
+      <a-box position="10 10 -8" height="20" color="#FF0000"></a-box>
+      <a-box position="-10 10 16" height="20" color="#0000FF"></a-box>
+      
+      <a-entity position="5 5 5">
+        <a-sphere position="5 5 5" mirror="resolution: 16; distance: 1000; interval: 250; repeat: true"></a-sphere>
+        <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="forever" dur="5000" easing="linear"></a-animation>
+      </a-entity>
+
+      <a-entity position="5 5 5">
+        <a-sphere position="5 5 5" color="#CA54B2"></a-sphere>
+        <a-animation attribute="rotation" from="0 0 0" to="360 0 360" repeat="forever" dur="2000" easing="linear"></a-animation>
+      </a-entity>
+
+      <a-obj-model src="#ball" mirror="repeat:true; resolution: 32;" position="3 2 0">
+        <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="forever" dur="10000" easing="linear">
+    </a-obj-model>
+
+      <a-sphere mirror="resolution: 64; distance: 1000; interval: 200; repeat: true" segments-radius="24" segments-height="24" radius="1.5" position="0 2.5 4" ></a-sphere>
+
+      <a-plane src="#groundTexture" rotation="-90 0 0" height="100" width="100"></a-plane>
+      <a-light type="ambient" color="#445451"></a-light>
+      <a-light type="point" intensity="2" position="2 4 4"></a-light>
+      <a-sky height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"></a-sky>
+
+    </a-scene>
+  </body>
+</html>

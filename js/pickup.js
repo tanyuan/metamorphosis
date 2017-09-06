@@ -1,6 +1,12 @@
 AFRAME.registerComponent('water-cup', {
 	init: function () {
 		var water = this.el;
+		water.addEventListener('mouseenter', function (evt) {
+            water.setAttribute('scale', '2.2 2.2 2.2');
+        });
+		water.addEventListener('mouseleave', function (evt) {
+            water.setAttribute('scale', '2.0 2.0 2.0');
+        });
 		water.addEventListener('click', function (evt) {
 			// when water picked up
 			// 'wake stage'

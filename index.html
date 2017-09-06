@@ -107,6 +107,12 @@
         <a-entity obj-model="obj:#toilet_paper-obj;mtl:#toilet_paper-mtl;" position="0.85 -2.5 1.5" rotation="-90 -90 -90" scale="1.5 1.5 1.5"></a-entity>
         <a-entity obj-model="obj:#towel-obj;mtl:#towel-mtl;" position="2.6 0.5 3.5" rotation="-90 -90 -90"></a-entity>
       </a-plane>
+        
+      <!-- In the mirror -->
+      <a-box id="mirror-object" position="-6.8 2.5 11">
+        <a-sphere position="0.27 0.15 -0.5" geometry="radius: 0.1;"></a-sphere>
+        <a-sphere position="-0.27 0.15 -0.5" geometry="radius: 0.1;"></a-sphere>
+      </a-box>
 
       <!-- Entrance Scene -->
       <a-plane position="-4.5 0 -10.5" rotation="-90 0 0" width="6" height="6" color="#333333">
@@ -126,7 +132,7 @@
           <a-sky color="#EC0000"></a-sky>
       </a-entity>
 
-      <a-camera position="6 1 5.4">
+      <a-camera position="6 1 5.4" mirror-listener>
         <a-entity id="cursor" position="0 0 -2" cursor geometry="primitive: ring; radiusOuter: 0.06; radiusInner: 0.04" material="color: black">
             <a-animation begin="click" easing="ease-in" attribute="scale"
            fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
@@ -145,5 +151,6 @@
     <script src="js/scene-switch.js"></script>
     <script src="js/teleport.js"></script>
     <script src="js/pickup.js"></script>
+    <script src="js/mirror.js"></script>
   </body>
 </html>

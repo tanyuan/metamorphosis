@@ -1,4 +1,4 @@
-AFRAME.registerComponent('cursor-listener', {
+AFRAME.registerComponent('teleport-listener', {
   init: function () {
     this.el.addEventListener('mouseenter', function (evt) {
       this.setAttribute('material', 'color', '#555555');

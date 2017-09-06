@@ -9,7 +9,7 @@ AFRAME.registerComponent('water-cup', {
 				set_event_plane();
 				water.setAttribute('visible', false);
 
-				event_text.addEventListener('click', function(){
+				action_text.addEventListener('click', function(){
 					water.setAttribute('visible', true);
 					reset_event_plane();
 				});

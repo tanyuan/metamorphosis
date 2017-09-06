@@ -11,16 +11,16 @@
     <a-scene travel-node-default="axis: x,y,z; offsetY: 0.75">
 
         <!-- Tiles for teleport -->
-        <a-plane position="-5.041 0.1 5.025" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
-        <a-plane position="-5.041 0.1 10.98" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
-        <a-plane position="-5.041 0.1 -10.98" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
-        <a-plane position="-0.397 0.1 5.041" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
-        <a-plane position="-5.041 0.1 -0.19" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
-        <a-plane position="-0.346 0.1 -0.19" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
-        <a-plane position=" 4.472 0.1 -0.19" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
-        <a-plane position="-5.041 0.100 -4.94" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
-        <a-plane position="-0.28 0.100 -4.94" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
-        <a-plane position=" 4.60  0.100 -4.94" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
+        <a-plane class="tile" position="-5.041 0.01 5.025" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
+        <a-plane class="tile" position="-5.041 0.01 10.98" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
+        <a-plane class="tile" position="-5.041 0.01 -10.98" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
+        <a-plane class="tile" position="-0.397 0.01 5.041" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
+        <a-plane class="tile" position="-5.041 0.01 -0.19" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
+        <a-plane class="tile" position="-0.346 0.01 -0.19" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
+        <a-plane class="tile" position=" 4.472 0.01 -0.19" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
+        <a-plane class="tile" position="-5.041 0.01 -4.94" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
+        <a-plane class="tile" position="-0.28 0.01 -4.94" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
+        <a-plane class="tile" position=" 4.60  0.01 -4.94" rotation="-90 0 0" width="4" height="4" color="#444444" teleport-listener travel-node="transition: move"></a-plane>
 
       <!-- Assets Management -->
       <a-assets>
@@ -60,6 +60,30 @@
         <!-- Phone -->
         <a-asset-item id="phone-mtl" src="./blocks/phone/materials.mtl"></a-asset-item>
         <a-asset-item id="phone-obj" src="./blocks/phone/model.obj"></a-asset-item>
+        <!-- Photo -->
+        <a-asset-item id="photo-mtl" src="./blocks/photo/materials.mtl"></a-asset-item>
+        <a-asset-item id="photo-obj" src="./blocks/photo/model.obj"></a-asset-item>
+        <!-- Book -->
+        <a-asset-item id="book-mtl" src="./blocks/book/materials.mtl"></a-asset-item>
+        <a-asset-item id="book-obj" src="./blocks/book/model.obj"></a-asset-item>
+        <!-- TV -->
+        <a-asset-item id="tv-mtl" src="./blocks/television/materials.mtl"></a-asset-item>
+        <a-asset-item id="tv-obj" src="./blocks/television/model.obj"></a-asset-item>
+        <!-- TV Bench -->
+        <a-asset-item id="bench-mtl" src="./blocks/bench/materials.mtl"></a-asset-item>
+        <a-asset-item id="bench-obj" src="./blocks/bench/model.obj"></a-asset-item>
+        <!-- Dress -->
+        <a-asset-item id="dress-mtl" src="./blocks/dress/materials.mtl"></a-asset-item>
+        <a-asset-item id="dress-obj" src="./blocks/dress/model.obj"></a-asset-item>
+        <!-- envelope -->
+        <a-asset-item id="envelope-mtl" src="./blocks/envelope/materials.mtl"></a-asset-item>
+        <a-asset-item id="envelope-obj" src="./blocks/envelope/model.obj"></a-asset-item>
+        <!-- document -->
+        <a-asset-item id="document-mtl" src="./blocks/document/materials.mtl"></a-asset-item>
+        <a-asset-item id="document-obj" src="./blocks/document/model.obj"></a-asset-item>
+        <!-- art -->
+        <a-asset-item id="art-mtl" src="./blocks/art/materials.mtl"></a-asset-item>
+        <a-asset-item id="art-obj" src="./blocks/art/model.obj"></a-asset-item>
       </a-assets>
       <!-- Main Scene -->
       <a-plane position="0 0 0" rotation="-90 0 0" width="15" height="15" color="#333333">
@@ -74,16 +98,26 @@
         <a-box position="-5 -8 7" rotation="0 0 90" geometry="height:3;depth:2" color="#e3e3e3"></a-box>
         <a-box position="-5 8 7" rotation="0 0 90" geometry="depth:2;height:3" color="#e3e3e3"></a-box>
 
-        <a-box position="6.1 5 3" geometry="width:2.5;depth:6;height:5" color="#e3e3e3"></a-box>
+        <!-- <a-box position="6.1 5 3" geometry="width:2.5;depth:6;height:5" color="#e3e3e3"></a-box> -->
         <!-- Room Objects -->
-        <a-entity obj-model="obj:#bed-obj;mtl:#bed-mtl;" position="6 -5.5 1" rotation="52 -90 -90" scale="5 5 5" travel-node="transition: move"></a-entity>
-        <a-entity obj-model="obj:#nightstand-obj;mtl:#nightstand-mtl" position="3.75 -7 0.5" rotation="180 -90 -90" scale="0.5 0.5 0.5"></a-entity>
-        <a-entity obj-model="obj:#water-obj;mtl:#water-mtl" position="3.75 -7 1.58" rotation="180 -90 -90" scale="2 2 2" water-cup></a-entity>
+        <a-entity obj-model="obj:#bed-obj;mtl:#bed-mtl;" position="5.7 -5.5 1" rotation="52 -90 -90" scale="6 6 6" travel-node="transition: move"></a-entity>
+        <a-entity obj-model="obj:#nightstand-obj;mtl:#nightstand-mtl" position="3.2 -7 0.5" rotation="180 -90 -90" scale="0.5 0.5 0.5"></a-entity>
+        <a-entity obj-model="obj:#water-obj;mtl:#water-mtl" position="3.2 -7 1.58" rotation="180 -90 -90" scale="2 2 2" water-cup></a-entity>
         <a-entity obj-model="obj:#table-obj;mtl:#table-mtl;" position="-6.5 0 2.2" rotation="0 -90 -90" scale="0.8 0.8 0.8"></a-entity>
         <a-entity obj-model="obj:#chair-obj;mtl:#chair-mtl;" position="-3.5 2 0.5" rotation="0 -180 -30" scale="1.5 1.5 1.5"></a-entity>
         <a-entity obj-model="obj:#plant-obj;mtl:#plant-mtl;" position="-1.75 6.5 0.8" rotation="90 0 0" scale="3 3 3"></a-entity>
-        <a-entity obj-model="obj:#bookshelf-obj;mtl:#bookshelf-mtl;" position="-0.25 -7 1.3" rotation="90 0 0" scale="2 2 2"></a-entity>
+        <a-entity obj-model="obj:#bookshelf-obj;mtl:#bookshelf-mtl;" position="1 6.9 2.3" rotation="-90 0 0" scale="2 2 2"></a-entity>
         <a-entity obj-model="obj:#phone-obj;mtl:#phone-mtl;" position="-5.5 -0.5 2.15" rotation="0 180.02333923010465 -45" scale="0.5 0.5 0.5"></a-entity>
+        <a-entity obj-model="obj:#photo-obj;mtl:#photo-mtl;" position="-7.2 0 4" rotation="90 0 0" scale="1.5 1.5 1.5"></a-entity>
+        <a-entity obj-model="obj:#book-obj;mtl:#book-mtl;" position="2 0 0.15" rotation="90 0 0" scale="1.5 1.5 1.5"></a-entity>
+        <a-entity obj-model="obj:#tv-obj;mtl:#tv-mtl;" position="4.5 7 1.9" rotation="0 90 90" scale="1.5 1.5 1.5"></a-entity>
+        <a-entity obj-model="obj:#bench-obj;mtl:#bench-mtl;" position="4.5 6.5 1" rotation="90 0 0" scale="5 5 5"></a-entity>
+        <a-entity obj-model="obj:#dress-obj;mtl:#dress-mtl;" position="-0.5 -6 1.5" rotation="0 90 90" scale="1.5 1.5 1.5"></a-entity>
+        <a-entity obj-model="obj:#envelope-obj;mtl:#envelope-mtl;" position="0 -6.5 0.009" rotation="-30 90 -90" scale="0.5 0.5 0.5"></a-entity>
+        <a-entity obj-model="obj:#document-obj;mtl:#document-mtl;" position="2 2.5 0.1" rotation="-90 0 0" scale="6 6 6"></a-entity>
+        <a-entity obj-model="obj:#document-obj;mtl:#document-mtl;" position="4 -2.5 0.1" rotation="-90 0 0" scale="6 6 6"></a-entity>
+        <a-entity obj-model="obj:#document-obj;mtl:#document-mtl;" position="-2 5 0.1" rotation="-90 0 0" scale="6 6 6"></a-entity>
+        <a-entity obj-model="obj:#art-obj;mtl:#art-mtl;" position="-7.4 -5 4.5" rotation="0 -90 90" scale="6 6 6"></a-entity>
       </a-plane>
 
       <!-- Bathroom Scene -->
@@ -115,9 +149,9 @@
       <!-- Event Use Plane -->
       <a-plane id="event-plane" position="0 0 -20" material="opacity:0">
         <!-- water animation -->
-        <a-entity id="water-cup-hand-wake" visibile="false" obj-model="obj:#water-obj;mtl:#water-mtl" position="0 0.25 -2.5" rotation="50 80 100" scale="3 3 3"></a-entity>
-        <a-entity id="event-text" position="0 -0.25 -1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color: #333333" text="color: white; align: center; value: Okay, this feels better."></a-entity>
-        <a-entity id="action-text" position="0 -0.25 -1.5" geometry="primitive: plane; height: 0.1; width: 0.5" material="color: white; opacity: 0.5;" text="width: 1;color: black; align: center; value: PUT BACK"></a-entity>
+        <a-entity id="water-cup-hand-wake" visibile="false" obj-model="obj:#water-obj;mtl:#water-mtl" position="0 0.25 -2.5" rotation="50 50 50" scale="4 4 4"></a-entity>
+        <a-entity id="event-text" position="0 -0.25 -1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color: #333333" text="width:2; color: white; align: center; value: Okay, this feels better."></a-entity>
+        <a-entity id="action-text" position="0 -0.5 -1.5" geometry="primitive: plane; height: 0.1; width: 0.5" material="color: white; opacity: 0.5;" text="width: 1;color: black; align: center; value: PUT BACK"></a-entity>
       </a-plane>
 
       <a-camera position="6 1 5.4" id="camera">
@@ -125,6 +159,8 @@
             <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
             <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
         </a-entity>
+        <a-entity id="camera-text" visible="false" position="0 -0.25 -1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color: #333333" text="width:1; color: white; align: center; value: Oh god, my throat burns like hell. I need some water."></a-entity>
+        <a-entity id="help-text" visible="false" position="0 -0.5 -1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color: white; opacity:0.5;" text="width:1; color: black; align: center; value: Gaze at the water to drink."></a-entity>
       </a-camera>
     </a-scene>
 

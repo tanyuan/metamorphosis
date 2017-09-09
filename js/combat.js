@@ -46,7 +46,7 @@ AFRAME.registerComponent('defense', {
                     console.log('Jane attack you!');
                     console.log('Draw');
                 }
-                combat_text.setAttribute('text', black_text(game_status_str));
+                combat_text.setAttribute('text', white_text_big(game_status_str));
             }
             printGameStatus();
 		});
@@ -84,7 +84,7 @@ AFRAME.registerComponent('talk', {
                         console.log('John dies.');
                     }
                 }
-                combat_text.setAttribute('text', black_text(game_status_str));
+                combat_text.setAttribute('text', white_text_big(game_status_str));
             }
             printGameStatus();
 		});
@@ -100,4 +100,22 @@ function getJaneAction() {
         return 1;
     else 
         return 0;
+}
+
+function black_text_big(message) {
+	return {
+		width: 4, 
+		color: 'black', 
+		align: 'center', 
+		value: message
+	};
+}
+
+function white_text_big(message) {
+	return {
+		width: 4, 
+		color: 'white', 
+		align: 'center', 
+		value: message
+	};
 }

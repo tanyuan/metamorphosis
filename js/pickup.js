@@ -264,7 +264,10 @@ AFRAME.registerComponent('toilet-door', {
 
 					action_text_primary_handler = function() {
 						reset_event_plane();
-						// TANYUAN TODO: enter toilet
+						// Enter toilet
+                        var camera = document.querySelector('a-camera');
+                        camera.setAttribute('position', '-4.2 2.5 10.980');
+                        camera.setAttribute('rotation', '0 270 0');
 					};
 
 					action_text_secondary_handler = function() {
@@ -279,7 +282,10 @@ AFRAME.registerComponent('toilet-door', {
 					action_text_primary_handler = function() {
 						finite_state = 'free';
 						reset_event_plane();
-						// TANYUAN TODO: leave toilet
+						// Leave toilet
+                        var camera = document.querySelector('a-camera');
+                        camera.setAttribute('position', '-5.04 2.5 5.025');
+                        camera.setAttribute('rotation', '0 0 0');
 					};
 
 					action_text_secondary_handler = function() {

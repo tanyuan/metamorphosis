@@ -137,10 +137,10 @@
         <a-box position="3.5 -1 4" rotation="0 0 90" geometry="width:6;depth:8" color="#e3e3e3"></a-box>
         <a-box position="-0.5 -3.5 4" geometry="width:7;depth:8" color="#e3e3e3"></a-box>
 
-        <!-- Room Door -->
-        <a-box position="-0.55 2.8 3" rotation="0 0 0" geometry="depth:6;height:0.2;width:3" material="color:#3a4652" animation=""></a-box>
+        <!-- Toilet Door -->
+        <a-box toilet-door position="-0.55 2.8 3" rotation="0 0 0" geometry="depth:6;height:0.2;width:3" material="color:#3a4652" animation=""></a-box>
 
-        <!-- Room Object -->
+        <!-- Toilet Object -->
         <a-entity obj-model="obj:#toilet-obj;mtl:#toilet-mtl;" position="2 -2 1.5" rotation="90 0 0" scale="5 5 5"></a-entity>
         <a-entity obj-model="obj:#toilet_paper-obj;mtl:#toilet_paper-mtl;" position="0.85 -2.5 1.5" rotation="-90 -90 -90" scale="1.5 1.5 1.5"></a-entity>
         <a-entity obj-model="obj:#towel-obj;mtl:#towel-mtl;" position="2.6 0.5 3.5" rotation="-90 -90 -90"></a-entity>
@@ -155,7 +155,7 @@
       </a-plane>
       
       <!-- Mirror in toilet -->
-      <a-entity position="-7.4 3 11">
+      <a-entity position="-7.4 2.5 11">
         <a-box position="-0.2 0 0" width="0.5" height="3.5" depth="3.5" material="color: #3a4652;"></a-box>
         <a-box mirror="repeat: true;" width="0.2" height="3" depth="3"></a-box>
       </a-entity>

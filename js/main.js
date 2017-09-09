@@ -1,4 +1,7 @@
 // Global Variable Declaration
+var current_date = new Date();
+var current_date_string = (current_date.getDate() + 1).toString() + '/' + (current_date.getMonth() + 1).toString() + '/' + current_date.getFullYear().toString();
+var future_date_string = current_date.getDate().toString() + '/' + (current_date.getMonth() + 1).toString() + '/' + (current_date.getFullYear() + 3).toString();
 var finite_state = 'start';
 var camera_plane = document.querySelector('a-camera');
 var event_plane = document.querySelector('#event-plane');
@@ -13,6 +16,7 @@ var action_text_handler;
 var action_text_primary_handler;
 var action_text_secondary_handler;
 var third_stage_state = 1;
+var fourth_stage_state = 1;
 
 function black_text(message) {
 	return {
@@ -44,7 +48,7 @@ function show_tile() {
 	}
 }
 
-function set_event_plane(state) {
+function set_event_plane(state, element_id) {
 	hide_tile();
 
 	action_text.removeEventListener('click',action_text_handler);
@@ -63,7 +67,6 @@ function set_event_plane(state) {
 		action_text.setAttribute('visible', true);
 	} else if (state === 'paper') {
 		var envelope = document.querySelector('#envelope-hand');
-
 		event_text.setAttribute('text', white_text('Enlistment paper? With my name on it?'));
 		action_text.setAttribute('text', black_text('NEXT'));
 		action_text_primary.setAttribute('text', black_text('READ DOCUMENT'));
@@ -73,6 +76,36 @@ function set_event_plane(state) {
 		action_text_primary.setAttribute('visible', true);
 		action_text_secondary.setAttribute('visible',true);
 		envelope.setAttribute('visible', true);
+	} else if (state === 'phone') {
+		var phone = document.querySelector('#phone-hand');
+		event_text.setAttribute('text', white_text('Someone unknown is calling. Maybe I should pick up the phone and figure out the whole situation.'));
+		action_text.setAttribute('text', black_text('PICK UP'));
+
+		event_text.setAttribute('visible', true);
+		action_text.setAttribute('visible', true);
+		phone.setAttribute('visible', true);
+	} else if (state === 'toilet_door_enter') {
+		event_text.setAttribute('text', white_text('The door that leads to the toilet.'));
+		action_text_primary.setAttribute('text', black_text('USE TOILET'));
+		action_text_secondary.setAttribute('text', black_text('LEAVE'));
+
+		event_text.setAttribute('visible', true);
+		action_text_primary.setAttribute('visible', true);
+		action_text_secondary.setAttribute('visible',true);
+	} else if (state === 'toilet_door_leave') {
+		event_text.setAttribute('text', white_text('The door that leads to the room.'));
+		action_text_primary.setAttribute('text', black_text('LEAVE TOILET'));
+		action_text_secondary.setAttribute('text', black_text('CANCEL'));
+
+		event_text.setAttribute('visible', true);
+		action_text_primary.setAttribute('visible', true);
+		action_text_secondary.setAttribute('visible',true);
+	} else if (state === 'free') {
+		// free explore
+		var element = document.querySelector(element_id);
+		element.setAttribute('visible', true);
+		event_text.setAttribute('visible', true);
+		action_text.setAttribute('visible', true);
 	}
 }
 
@@ -101,24 +134,25 @@ function second_stage(){
 	// console.log('second');
 	camera_text.setAttribute('visible', true);
 	camera_text.setAttribute('text', white_text('Where is this place? Did I got too drunk and sleep over at someone’s place yesterday?'));
+	show_tile();
+	help_text.setAttribute('visible', true);
+	help_text.setAttribute('text', white_text('Gaze at the floor tile to move, and explore the room.'));
 	setTimeout(function(){
 		camera_text.setAttribute('text', white_text('Why? I can\'t memorise anything happened yesterday?'));
 	},5000);
 	setTimeout(function(){
 		camera_text.setAttribute('text', white_text('I need to find out where this place is!'));
-		help_text.setAttribute('visible', true);
-		help_text.setAttribute('text', white_text('Gaze at the floor tile to move, and explore the room.'));
+		help_text.setAttribute('text', white_text('Gaze at items to pick up, and explore the room.'));
 	},10000);
 	setTimeout(function(){
 		camera_text.setAttribute('visible', false);
 		help_text.setAttribute('visible', false);
 		finite_state = 'free';
-		show_tile();
 	},15000);
 }
 
 function third_stage(){
-	event_text.setAttribute('text', white_text('"John Doe would be serving the country as a navy from (date) to (date)..."'));
+	event_text.setAttribute('text', white_text('"John Doe would be serving the country as a navy from ' + current_date_string + ' to ' + future_date_string + '..."'));
 	action_text.setAttribute('visible', true);
 }
 

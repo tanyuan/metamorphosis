@@ -30,7 +30,7 @@ AFRAME.registerComponent('water-cup', {
 				water.setAttribute('visible', false);
 				camera_text.setAttribute('visible', false);
 				help_text.setAttribute('visible', false);
-				event_text.setAttribute('text', white_text('A cup of water. I don\'t need right now.'));
+				event_text.setAttribute('text', white_text('A cup of water. I don\'t need it right now.'));
 				action_text.setAttribute('text', black_text('PUT BACK'));
 
 				action_text_handler = function(){
@@ -68,7 +68,7 @@ AFRAME.registerComponent('envelope', {
 				action_text_handler = function() {
 					if (third_stage_state === 1) {
 						third_stage_state++;
-						event_text.setAttribute('text', white_text('Oh right, I signed up for the special force project, and my term starts tomorrow.'));
+						event_text.setAttribute('text', white_text('Oh right, I signed up for the special forces, and my term starts tomorrow.'));
 					} else if (third_stage_state === 2) {
 						third_stage_state++;
 						event_text.setAttribute('text', white_text('But how come my documents are in this unknown place?'));
@@ -108,7 +108,7 @@ AFRAME.registerComponent('envelope', {
 					action_text_primary.setAttribute('visible', false);
 					action_text_secondary.setAttribute('visible',false);
 					action_text.setAttribute('visible',true);
-					event_text.setAttribute('text', white_text('"John Doe would be serving the country as a navy from ' + current_date_string + ' to ' + future_date_string + '..."'));
+					event_text.setAttribute('text', white_text('"John Doe would be serving the country in the Navy from ' + current_date_string + ' to ' + future_date_string + '..."'));
 				};
 
 				action_text_secondary_handler = function(){
@@ -162,7 +162,7 @@ AFRAME.registerComponent('phone', {
 				action_text_handler = function(){
 					if (fourth_stage_state === 1) {
 						fourth_stage_state++;
-						event_text.setAttribute('text', white_text('"Hey! John! Where the hell are you?"'));
+						event_text.setAttribute('text', white_text('"Hey, John! Where the hell are you?"'));
 						action_text.setAttribute('text', black_text('NEXT'));
 					} else if (fourth_stage_state === 2) {
 						fourth_stage_state++;
@@ -172,10 +172,10 @@ AFRAME.registerComponent('phone', {
 						event_text.setAttribute('text', white_text('"Jane! Your girlfriend! Are you out of your mind?"'));
 					} else if (fourth_stage_state === 4) {
 						fourth_stage_state++;
-						event_text.setAttribute('text', white_text('Oh…, I’m sorry. I\'m at somewhere strange.'));
+						event_text.setAttribute('text', white_text('Oh…, I’m sorry. I\'m somewhere strange.'));
 					} else if (fourth_stage_state === 5) {
 						fourth_stage_state++;
-						event_text.setAttribute('text', white_text('"What do you mean by strange? And aren\'t we suppose to meet at the cafe?"'));
+						event_text.setAttribute('text', white_text('"What do you mean by strange? And aren\'t we supposed to meet at the cafe?"'));
 					} else if (fourth_stage_state === 6) {
 						fourth_stage_state++;
 						event_text.setAttribute('text', white_text('I can\'t meet you at the cafe, Jane. I need to prepare for the enlistment.'));
@@ -190,26 +190,26 @@ AFRAME.registerComponent('phone', {
 						event_text.setAttribute('text', white_text('"John, are you out of your mind? It\'s '+ future_date_string + ' today, and you got out of the military one day eariler."'));
 					} else if (fourth_stage_state === 10) {
 						fourth_stage_state++;
-						event_text.setAttribute('text', white_text('I can\'t understand this at all! How come that I don\'t have the memory for the past three years? Everything is so wrong!'));
+						event_text.setAttribute('text', white_text('You\'re kidding me! I haven\'t even joined the special forces!'));
 					} else if (fourth_stage_state === 11) {
 						fourth_stage_state++;
-						event_text.setAttribute('text', white_text('"Calm down, John. I\'ll go find you and let us figure things out together."'));
+						event_text.setAttribute('text', white_text('"Calm down, John. I\'ll go find you and we will figure things out together."'));
 					} else if (fourth_stage_state === 12) {
 						fourth_stage_state++;
 						event_text.setAttribute('text', white_text('But how are you going to find me if I don\'t even know where I am?'));
 					} else if (fourth_stage_state === 13) {
 						fourth_stage_state++;
-						event_text.setAttribute('text', white_text('"Are you at a place with a abstract painting on the wall?"'));
+						event_text.setAttribute('text', white_text('"Are you at a place with an abstract painting on the wall?"'));
 					} else if (fourth_stage_state === 14) {
 						fourth_stage_state++;
 						event_text.setAttribute('text', white_text('How\'d you know?'));
 					} else if (fourth_stage_state === 15) {
 						fourth_stage_state++;
-						event_text.setAttribute('text', white_text('"That\'s your place, John. Stay there. I\'ll be there right away.(Ends call.)"'));
+						event_text.setAttribute('text', white_text('"Stay there. I\'ll be there right away."'));
 						action_text.setAttribute('text', black_text('END CALL'));
 					} else if (fourth_stage_state === 16) {
 						fourth_stage_state++;
-						event_text.setAttribute('text', white_text('Everything feels so weird. Why can\'t I recall anything from the past three years.'));
+						event_text.setAttribute('text', white_text('Everything feels so weird. If that is true, why can\'t I recall anything from the past three years?'));
 						action_text.setAttribute('text', black_text('NEXT'));
 					} else if (fourth_stage_state === 17) {
 						fourth_stage_state++;
@@ -264,7 +264,10 @@ AFRAME.registerComponent('toilet-door', {
 
 					action_text_primary_handler = function() {
 						reset_event_plane();
-						// TANYUAN TODO: enter toilet
+						// Enter toilet
+                        var camera = document.querySelector('a-camera');
+                        camera.setAttribute('position', '-4.2 2.5 10.980');
+                        camera.setAttribute('rotation', '0 270 0');
 					};
 
 					action_text_secondary_handler = function() {
@@ -279,7 +282,10 @@ AFRAME.registerComponent('toilet-door', {
 					action_text_primary_handler = function() {
 						finite_state = 'free';
 						reset_event_plane();
-						// TANYUAN TODO: leave toilet
+						// Leave toilet
+                        var camera = document.querySelector('a-camera');
+                        camera.setAttribute('position', '-5.04 2.5 5.025');
+                        camera.setAttribute('rotation', '0 0 0');
 					};
 
 					action_text_secondary_handler = function() {

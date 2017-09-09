@@ -197,6 +197,12 @@
             <a-sphere position="-0.27 0.15 -0.5" geometry="radius: 0.1;"></a-sphere>
           </a-box>
         </a-entity>
+        <!-- Fist animation in combat -->
+        <a-entity position="0 0 -0.5">
+          <a-box position="0 0 0" width="0.3" height="0.3" depth="0.3" material="color: #FFFFAA;">
+            <a-animation attribute="position" from="1 1 1" to="2 4 -8"></a-animation>
+          </a-box>
+        </a-entity>
         <a-entity id="camera-text" visible="false" position="0 -0.25 -1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color: #333333" text="width:1; color: white; align: center; value: Oh god, my throat burns like hell. I need some water."></a-entity>
         <a-entity id="help-text" visible="false" position="0 -0.5 -1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color: white; opacity:0.5;" text="width:1; color: black; align: center; value: Gaze at the water to drink."></a-entity>
       </a-camera>

@@ -78,7 +78,7 @@ function set_event_plane(state, element_id) {
 		envelope.setAttribute('visible', true);
 	} else if (state === 'phone') {
 		var phone = document.querySelector('#phone-hand');
-		event_text.setAttribute('text', white_text('Someone unknown is calling. Maybe I should pick up the phone and figure out the whole situation.'));
+		event_text.setAttribute('text', white_text('Someone unknown is calling. Maybe I should pick up the phone?'));
 		action_text.setAttribute('text', black_text('PICK UP'));
 
 		event_text.setAttribute('visible', true);
@@ -133,15 +133,15 @@ function first_stage(){
 function second_stage(){
 	// console.log('second');
 	camera_text.setAttribute('visible', true);
-	camera_text.setAttribute('text', white_text('Where is this place? Did I got too drunk and sleep over at someone’s place yesterday?'));
+	camera_text.setAttribute('text', white_text('What is this place? Did I get too drunk and sleep over at someone’s place last night?'));
 	show_tile();
 	help_text.setAttribute('visible', true);
 	help_text.setAttribute('text', white_text('Gaze at the floor tile to move, and explore the room.'));
 	setTimeout(function(){
-		camera_text.setAttribute('text', white_text('Why? I can\'t memorise anything happened yesterday?'));
+		camera_text.setAttribute('text', white_text('Why? I can\'t remember anything happened yesterday?'));
 	},5000);
 	setTimeout(function(){
-		camera_text.setAttribute('text', white_text('I need to find out where this place is!'));
+		camera_text.setAttribute('text', white_text('I need to find out what this place is!'));
 		help_text.setAttribute('text', white_text('Gaze at items to pick up, and explore the room.'));
 	},10000);
 	setTimeout(function(){
@@ -152,7 +152,7 @@ function second_stage(){
 }
 
 function third_stage(){
-	event_text.setAttribute('text', white_text('"John Doe would be serving the country as a navy from ' + current_date_string + ' to ' + future_date_string + '..."'));
+	event_text.setAttribute('text', white_text('"John Doe would be serving the country in the Navy from ' + current_date_string + ' to ' + future_date_string + '..."'));
 	action_text.setAttribute('visible', true);
 }
 

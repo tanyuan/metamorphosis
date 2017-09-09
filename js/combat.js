@@ -24,27 +24,29 @@ AFRAME.registerComponent('combat', {
 AFRAME.registerComponent('defense', {
 	init: function () {
 		var button = this.el;
+		button.addEventListener('mouseenter', function (evt) {
+            button.setAttribute('scale', '1.2 1.2 1.2');
+        });
+		button.addEventListener('mouseleave', function (evt) {
+            button.setAttribute('scale', '1.0 1.0 1.0');
+        });
 		button.addEventListener('click', function (evt) {
             var combat_text = document.getElementById('combat-text');
-            console.log('You defense!');
             if (game_state == 1) {
                 jane_action = getJaneAction();
                 if (jane_action == 0) {
                     // Jane Listen
                     game_status_str = 'Jane tries to listen to you but you defense...';
-                    console.log('Jane tries to listen to you.');
                     jane_lives--;
-                    console.log('Jane--');
+                    refreshJaneHeart();
                     if (jane_lives == 0) {
                         game_state = 0;
                         game_status_str = 'You killed Jane!';
-                        console.log('Jane dies.');
+                        endGame();
                     }
                 } else {
                     // Jane Attack
                     game_status_str = 'Jane attacks you! Thankfully you defense!';
-                    console.log('Jane attack you!');
-                    console.log('Draw');
                 }
                 combat_text.setAttribute('text', white_text_big(game_status_str));
             }
@@ -56,32 +58,44 @@ AFRAME.registerComponent('defense', {
 AFRAME.registerComponent('talk', {
 	init: function () {
 		var button = this.el;
+		button.addEventListener('mouseenter', function (evt) {
+            button.setAttribute('scale', '1.2 1.2 1.2');
+        });
+		button.addEventListener('mouseleave', function (evt) {
+            button.setAttribute('scale', '1.0 1.0 1.0');
+        });
 		button.addEventListener('click', function (evt) {
             var combat_text = document.getElementById('combat-text');
-            console.log('You try to talk to Jane!');
             if (game_state == 1) {
                 jane_action = getJaneAction();
                 if (jane_action == 0) {
                     // Jane Listen
-                    game_status_str = 'You try to explain and Janes listens to you!';
-                    console.log('Jane tries to listen to you.');
+                    switch(heal_times) {
+                        case 0:
+                            game_status_str = '"You monster! Tell me where is John!"';
+                            break;
+                        case 1:
+                            game_status_str = '"No way you are John! Tell me who you are!"';
+                            break;
+                        case 2:
+                            game_status_str = '"You sounds like John! It can\'t be!"';
+                            break;
+                    }
                     heal_times++;
-                    console.log('Heal++');
                     if (heal_times == 3) {
                         game_state = 0;
-                        game_status_str = 'Jane finally discovers it is you and take you home.';
-                        console.log('Peaceful ending.');
+                        game_status_str = 'Oh my dear, let\'t go home and figure all this out!';
+                        endGame();
                     }
                 } else {
                     // Jane Attack
                     game_status_str = 'You try to explain but Jane attacks you!';
-                    console.log('Jane attack you!');
                     john_lives--;
-                    console.log('John--');
+                    refreshJohnHeart();
                     if (john_lives == 0) {
                         game_state = 0;
                         game_status_str = 'You are killed by Jane.';
-                        console.log('John dies.');
+                        endGame();
                     }
                 }
                 combat_text.setAttribute('text', white_text_big(game_status_str));
@@ -100,6 +114,57 @@ function getJaneAction() {
         return 1;
     else 
         return 0;
+}
+
+function endGame() {
+    var button_defense = document.getElementById('button-defense');
+    var button_talk = document.getElementById('button-talk');
+    button_defense.setAttribute('visible', 'false');
+    button_talk.setAttribute('visible', 'false');
+}
+
+function refreshJohnHeart() {
+    var heart_1 = document.getElementById('john_heart_1');
+    var heart_2 = document.getElementById('john_heart_2');
+    var heart_3 = document.getElementById('john_heart_3');
+
+    switch(john_lives) {
+        case 3:
+            break;
+        case 2:
+            heart_3.setAttribute('visible', 'false');
+            break;
+        case 1:
+            heart_3.setAttribute('visible', 'false');
+            heart_2.setAttribute('visible', 'false');
+            break;
+        default:
+            heart_3.setAttribute('visible', 'false');
+            heart_2.setAttribute('visible', 'false');
+            heart_1.setAttribute('visible', 'false');
+    }
+}
+
+function refreshJaneHeart() {
+    var heart_1 = document.getElementById('jane_heart_1');
+    var heart_2 = document.getElementById('jane_heart_2');
+    var heart_3 = document.getElementById('jane_heart_3');
+
+    switch(jane_lives) {
+        case 3:
+            break;
+        case 2:
+            heart_3.setAttribute('visible', 'false');
+            break;
+        case 1:
+            heart_3.setAttribute('visible', 'false');
+            heart_2.setAttribute('visible', 'false');
+            break;
+        default:
+            heart_3.setAttribute('visible', 'false');
+            heart_2.setAttribute('visible', 'false');
+            heart_1.setAttribute('visible', 'false');
+    }
 }
 
 function black_text_big(message) {

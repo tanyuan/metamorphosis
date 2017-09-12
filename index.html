@@ -79,6 +79,9 @@
         <a-asset-item id="hand-obj" src="./blocks/hand/model.obj"></a-asset-item>
         <!-- heart icon -->
         <img id="heart" src="img/heart.png">
+        <!-- Mail -->
+        <a-asset-item id="mail-mtl" src="./blocks/mail/materials.mtl"></a-asset-item>
+        <a-asset-item id="mail-obj" src="./blocks/mail/model.obj"></a-asset-item>
       </a-assets>
 
     <!-- Start Scene -->
@@ -139,7 +142,8 @@
         <a-entity paper hover-effect obj-model="obj:#document-obj;mtl:#document-mtl;" position="2 2.5 0.1" rotation="-90 0 0" scale="6 6 6"></a-entity>
         <a-entity paper hover-effect obj-model="obj:#document-obj;mtl:#document-mtl;" position="4 -2.5 0.1" rotation="-90 0 0" scale="6 6 6"></a-entity>
         <a-entity paper hover-effect obj-model="obj:#document-obj;mtl:#document-mtl;" position="-2 5 0.1" rotation="-90 0 0" scale="6 6 6"></a-entity>
-        <a-entity obj-model="obj:#art-obj;mtl:#art-mtl;" position="-7.4 -5 4.5" rotation="0 -90 90" scale="6 6 6"></a-entity>
+        <a-entity painting obj-model="obj:#art-obj;mtl:#art-mtl;" position="-7.4 -5 4.5" rotation="0 -90 90" scale="6 6 6"></a-entity>
+        <a-entity id="mail" visible="false" mail-floor obj-model="obj:#mail-obj;mtl:#mail-mtl;" position="-7 -5 0.1" rotation="-90 180 -90" scale="0.5 0.5 0.5"></a-entity>
       </a-plane>
 
       <!-- Bathroom Scene -->
@@ -164,7 +168,7 @@
         <!-- Room Door -->
          <a-box front-door position="-0.55 -2.2 3" rotation="0 0 0" geometry="depth:6;height:0.2;width:3" material="color:#3a4652" animation=""></a-box>
       </a-plane>
-      
+
       <!-- Mirror in toilet -->
       <a-entity look-at-mirror position="-7.4 2.5 11">
         <a-box position="-0.2 0 0" width="0.5" height="3.5" depth="3.5" material="color: #3a4652;"></a-box>
@@ -201,6 +205,7 @@
         <a-entity id="paper-hand" visible="false" obj-model="obj:#document-obj;mtl:#document-mtl;" position="-0.05 0.5 -2" rotation="30 90 90" scale="4 4 4"></a-entity>
         <a-entity id="plant-hand" visible="false" obj-model="obj:#plant-obj;mtl:#plant-mtl;" position="0.03 0.4 -2" rotation="0 0 0" scale="2 2 2"></a-entity>
         <a-entity id="book-hand" visible="false" obj-model="obj:#book-obj;mtl:#book-mtl;" position="2 0 0.15" rotation="90 0 0" scale="1.5 1.5 1.5"></a-entity>
+        <a-entity id="mail-hand" visible="false" obj-model="obj:#mail-obj;mtl:#mail-mtl;" position="0.05 0.5 -2" rotation="0 90 0" scale="0.5 0.5 0.5"></a-entity>
         <!-- text -->
         <a-entity id="event-text" visible="false" position="0 -0.25 -1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color: #333333" text="width:1; color: white; align: center; value: Okay, this feels better."></a-entity>
         <a-entity id="action-text" visible="false" position="0 -0.5 -1.5" geometry="primitive: plane; height: 0.1; width: 0.5" material="color: white; opacity: 0.5;" text="width: 1;color: black; align: center; value: PUT BACK"></a-entity>
@@ -235,7 +240,7 @@
           <a-entity obj-model="obj:#pony-obj;mtl:#pony-mtl;" position="0 0 0" rotation="0 90 0" scale="6 6 6"></a-entity>
         </a-entity>
         <!-- heart indicator -->
-        <a-entity position="0 1.4 -2">
+        <a-entity position="0 1.4 -2" id="john_heart" visible="false">
             <a-image id="john_heart_1" position="-0.3 0 0" src="#heart" width="0.2" height="0.2"></a-image>
             <a-image id="john_heart_2" position="0 0 0" src="#heart" width="0.2" height="0.2"></a-image>
             <a-image id="john_heart_3" position="0.3 0 0" src="#heart" width="0.2" height="0.2"></a-image>

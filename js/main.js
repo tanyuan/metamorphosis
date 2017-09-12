@@ -18,6 +18,8 @@ var action_text_secondary_handler;
 var third_stage_state = 1;
 var fourth_stage_state = 1;
 var fifth_stage_state = 1;
+var mail_show = false;
+var extra_stage_state = 1;
 
 function black_text(message) {
 	return {
@@ -107,9 +109,22 @@ function set_event_plane(state, element_id) {
 
 		event_text.setAttribute('visible', true);
 		action_text.setAttribute('visible', true);
+	} else if (state === 'mail') { 
+		var mail = document.querySelector('#mail-hand');
+		mail.setAttribute('visible', true);
+
+		event_text.setAttribute('text', white_text('There is an mail on the floor. Should I read it?'));
+		action_text_primary.setAttribute('text', black_text('READ MAIL'));
+		action_text_secondary.setAttribute('text', black_text('PUT BACK'));
+		action_text.setAttribute('text', black_text('NEXT'));
+
+		event_text.setAttribute('visible', true);
+		action_text_primary.setAttribute('visible', true);
+		action_text_secondary.setAttribute('visible',true);
 	} else if (state === 'free') {
 		// free explore
-		if (element_id === null) {
+		console.log(state,element_id);
+		if (element_id !== null) {
 			var element = document.querySelector(element_id);
 			element.setAttribute('visible', true);
 		}

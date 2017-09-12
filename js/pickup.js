@@ -474,6 +474,8 @@ AFRAME.registerComponent('front-door', {
 			if (fifth_stage_state > 1) {
 				set_event_plane('front_door_enter');
 				finite_state = 'combat';
+				var heart = document.querySelector('#john_heart');
+				heart.setAttribute('visible', true);
 
 				action_text_handler = function() {
 					reset_event_plane();
@@ -515,3 +517,99 @@ AFRAME.registerComponent('book', {
 	}
 });
 
+AFRAME.registerComponent('painting', {
+	init: function() {
+		var painting = this.el;
+		painting.addEventListener('click', function(){
+			if (mail_show === false) {
+				// mail not shown
+				mail_show = true;
+				camera_text.setAttribute('text', white_text('Something fell on the door. Maybe I should take a look at it.'));
+				camera_text.setAttribute('visible', true);
+				var mail = document.querySelector('#mail');
+				mail.setAttribute('visible', true);
+
+				setTimeout(function(){
+					camera_text.setAttribute('visible', false);
+				}, 5000);
+			} else {
+				// mail shown
+				camera_text.setAttribute('text', white_text('A abstract painting. There is nothing special with it.'));
+				camera_text.setAttribute('visible', true);
+
+				setTimeout(function(){
+					camera_text.setAttribute('visible', false);
+				}, 3000);
+			}
+		});
+	}
+});
+
+
+AFRAME.registerComponent('mail-floor', {
+	init: function() {
+		var mail = this.el;
+		mail.addEventListener('click', function(){
+			set_event_plane('mail');
+			mail.setAttribute('visible', false);
+
+			action_text_primary_handler = function(){
+				action_text_primary.setAttribute('visible', false);
+				action_text_secondary.setAttribute('visible',false);
+
+				event_text.setAttribute('text', white_text('"Dear John, you must be wondering why you would receive a letter written by yourself."'));
+				action_text.setAttribute('visible', true);
+			};
+
+			action_text_secondary_handler = function(){
+				mail.setAttribute('visible', true);
+				reset_event_plane();
+			};
+
+			action_text_handler = function(){
+				if (extra_stage_state === 1) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"And by the time you read this letter, you might figure out that something\'s wrong with your body."'));
+				} else if (extra_stage_state === 2) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"So this letter is meant to tell you what happened."'));
+				} else if (extra_stage_state === 3) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"You\'ve particpated in an elite program while serving the country."'));
+				} else if (extra_stage_state === 4) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"The program acclaimed that its purpose was to improve soldiers\' physical strength through medical injections."'));
+				} else if (extra_stage_state === 5) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"However, what the program didn\'t tell you was that the possible failure rate is way higher than the success rate."'));
+				} else if (extra_stage_state === 6) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"And a variety of side effects may occur, including body tansformation of any kind, which was happening to you right now."'));
+				} else if (extra_stage_state === 7) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"According to your officials, you would soon be injected with a cure."'));
+				} else if (extra_stage_state === 8) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"And you would be sent back to your house for recovering."'));
+				} else if (extra_stage_state === 9) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"However, it\'s very likely that there is no such thing as an cure."'));
+				} else if (extra_stage_state === 10) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"I am not sure what would happen next."'));
+				} else if (extra_stage_state === 11)  {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"Be aware. Be safe."'));
+					action_text.setAttribute('text', black_text('END READING'));
+				} else if (extra_stage_state === 12) {
+					mail.setAttribute('visible', true);
+					reset_event_plane();
+				}
+			};
+
+			action_text.addEventListener('click',action_text_handler);
+			action_text_primary.addEventListener('click', action_text_primary_handler);
+			action_text_secondary.addEventListener('click', action_text_secondary_handler);
+		});
+	}
+});

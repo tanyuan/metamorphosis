@@ -388,16 +388,20 @@ AFRAME.registerComponent('toilet', {
 	init: function(){
 		var toilet = this.el;
 		toilet.addEventListener('click', function(){
-
+			console.log('puke');
 			event_text.setAttribute('text', white_text('I need to use the toilet, I am going to throw up.'));
 			action_text.setAttribute('text', black_text('USE TOILET'));
 
+			set_event_plane('free');
+
 			action_text_handler = function(){
-				event_text.setAttribute('text', white_text('Feeling better.'));
+				reset_event_plane();
+				camera_text.setAttribute('text', white_text('Feeling better.'));
+				camera_text.setAttribute('visible', true);
+
 				setTimeout(function(){
-					event_text.setAttribute('visible', false);
-					action_text.setAttribute('visible', false);
-				}, 5000);
+					camera_text.setAttribute('visible', false);
+				},3000);
 			};
 
 			action_text.addEventListener('click',action_text_handler);
@@ -412,41 +416,42 @@ AFRAME.registerComponent('look-at-mirror', {
 			set_event_plane('free');
 			event_text.setAttribute('text', white_text('Why there is a gigantic insect in the mirror?'));
 			action_text.setAttribute('text', black_text('NEXT'));
+
+			action_text_handler = function(){
+				console.log('mirror');
+				if (fifth_stage_state === 1) {
+					fifth_stage_state++;
+					event_text.setAttribute('text', white_text('What! The! Fuck! It\'s me! I become this gigantic insect!'));
+				} else if (fifth_stage_state === 2) {
+					fifth_stage_state++;
+					event_text.setAttribute('text', white_text('No, no, no. This is not possible. This is fucking crazy!'));
+				} else if (fifth_stage_state === 3) {
+					fifth_stage_state++;
+					event_text.setAttribute('text', white_text('Oh no..., I am going to puke again...'));
+				} else if (fifth_stage_state === 4) {
+					fifth_stage_state++;
+					event_text.setAttribute('text', white_text('Errr..., I don\'t feel well...'));
+				} else if (fifth_stage_state === 5) {
+					fifth_stage_state++;
+					event_text.setAttribute('text', white_text('My throat is burning again. And it\'s getting worse...'));
+				} else if (fifth_stage_state === 6) {
+					fifth_stage_state++;
+					event_text.setAttribute('text', white_text('Ahhhh... I...I..., can\'t speak!'));
+				} else if (fifth_stage_state === 7) {
+					fifth_stage_state++;
+					event_text.setAttribute('text', white_text('This place is fucking weird. What happened to me?'));
+				}  else if (fifth_stage_state === 8) {
+					fifth_stage_state++;
+					event_text.setAttribute('text', white_text('I need to get out of here.'));
+					action_text.setAttribute('text', black_text('END'));
+				} else {
+					event_text.setAttribute('visible', false);
+					action_text.setAttribute('visible', false);
+				}
+			};
+
+			action_text.addEventListener('click',action_text_handler);
 		});
-
-		action_text_handler = function(){
-			if (fifth_stage_state === 1) {
-				fifth_stage_state++;
-				event_text.setAttribute('text', white_text('What! The! Fuck! It\'s me! I become this gigantic insect!'));
-			} else if (fifth_stage_state === 2) {
-				fifth_stage_state++;
-				event_text.setAttribute('text', white_text('No, no, no. This is not possible. This is fucking crazy!'));
-			} else if (fifth_stage_state === 3) {
-				fifth_stage_state++;
-				event_text.setAttribute('text', white_text('Oh no..., I am going to puke again...'));
-			} else if (fifth_stage_state === 4) {
-				fifth_stage_state++;
-				event_text.setAttribute('text', white_text('Errr..., I don\'t feel well...'));
-			} else if (fifth_stage_state === 5) {
-				fifth_stage_state++;
-				event_text.setAttribute('text', white_text('My throat is burning again. And it\'s getting worse...'));
-			} else if (fifth_stage_state === 6) {
-				fifth_stage_state++;
-				event_text.setAttribute('text', white_text('Ahhhh... I...I..., can\'t speak!'));
-			} else if (fifth_stage_state === 7) {
-				fifth_stage_state++;
-				event_text.setAttribute('text', white_text('This place is fucking weird. What happened to me?'));
-			}  else if (fifth_stage_state === 8) {
-				fifth_stage_state++;
-				event_text.setAttribute('text', white_text('I need to get out of here.'));
-				action_text.setAttribute('text', black_text('END'));
-			} else {
-				event_text.setAttribute('visible', false);
-				action_text.setAttribute('visible', false);
-			}
-		};
-
-		action_text.addEventListener('click',action_text_handler);
 	}
 });
 

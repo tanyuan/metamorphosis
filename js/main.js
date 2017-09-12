@@ -17,6 +17,7 @@ var action_text_primary_handler;
 var action_text_secondary_handler;
 var third_stage_state = 1;
 var fourth_stage_state = 1;
+var fifth_stage_state = 1;
 
 function black_text(message) {
 	return {
@@ -100,10 +101,18 @@ function set_event_plane(state, element_id) {
 		event_text.setAttribute('visible', true);
 		action_text_primary.setAttribute('visible', true);
 		action_text_secondary.setAttribute('visible',true);
+	} else if (state === 'front_door_enter') {
+		event_text.setAttribute('text', white_text('Someone is knocking the door. It must be Jane.'));
+		action_text.setAttribute('text', black_text('OPEN DOOR'));
+
+		event_text.setAttribute('visible', true);
+		action_text.setAttribute('visible', true);
 	} else if (state === 'free') {
 		// free explore
-		var element = document.querySelector(element_id);
-		element.setAttribute('visible', true);
+		if (element_id === null) {
+			var element = document.querySelector(element_id);
+			element.setAttribute('visible', true);
+		}
 		event_text.setAttribute('visible', true);
 		action_text.setAttribute('visible', true);
 	}

@@ -486,8 +486,10 @@ AFRAME.registerComponent('front-door', {
 
 				action_text_handler = function() {
 					reset_event_plane();
-					// TODO: Enter combat
-	                
+                    // Go out to combat
+                    var camera = document.querySelector('a-camera');
+                    camera.setAttribute('position', '-4.5 1.8 -10');
+                    camera.setAttribute('rotation', '0 0 0');
 				};
 				action_text.addEventListener('click', action_text_handler);
 

@@ -5,3 +5,9 @@ function switchToMainScene() {
   document.querySelector('#light-point').emit('light-on');
   first_stage();
   }
+
+function switchToEndScene() {
+  document.querySelector('#light-point').emit('light-off');
+  document.getElementById('scene-main').setAttribute('visible', 'false')
+  document.getElementById('scene-end').setAttribute('visible', 'true')
+  }

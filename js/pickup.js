@@ -1,8 +1,22 @@
+AFRAME.registerComponent('hover-effect', {
+	init: function () {
+		var object = this.el;
+        var original_scale = object.getAttribute('scale');
+        var hover_scale = {x: original_scale.x*1.2, y: original_scale.y*1.2, z: original_scale.z*1.2};
+		object.addEventListener('mouseenter', function (evt) {
+            object.setAttribute('scale', hover_scale);
+        });
+		object.addEventListener('mouseleave', function (evt) {
+            object.setAttribute('scale', original_scale);
+        });
+    }
+});
+
 AFRAME.registerComponent('water-cup', {
 	init: function () {
 		var water = this.el;
 		water.addEventListener('mouseenter', function (evt) {
-            water.setAttribute('scale', '2.2 2.2 2.2');
+            water.setAttribute('scale', '2.5 2.5 2.5');
         });
 		water.addEventListener('mouseleave', function (evt) {
             water.setAttribute('scale', '2.0 2.0 2.0');

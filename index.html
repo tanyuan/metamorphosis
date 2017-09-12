@@ -125,20 +125,20 @@
         <a-entity water-cup obj-model="obj:#water-obj;mtl:#water-mtl" position="3.2 -7 1.58" rotation="180 -90 -90" scale="2 2 2"></a-entity>
         <a-entity obj-model="obj:#table-obj;mtl:#table-mtl;" position="-6.5 0 2.2" rotation="0 -90 -90" scale="0.8 0.8 0.8"></a-entity>
         <a-entity obj-model="obj:#chair-obj;mtl:#chair-mtl;" position="-3.5 2 0.5" rotation="0 -180 -30" scale="1.5 1.5 1.5"></a-entity>
-        <a-entity plant obj-model="obj:#plant-obj;mtl:#plant-mtl;" position="-1.75 6.5 0.8" rotation="90 0 0" scale="3 3 3"></a-entity>
+        <a-entity plant hover-effect obj-model="obj:#plant-obj;mtl:#plant-mtl;" position="-1.75 6.5 0.8" rotation="90 0 0" scale="3 3 3"></a-entity>
         <a-entity obj-model="obj:#bookshelf-obj;mtl:#bookshelf-mtl;" position="1 6.9 2.3" rotation="-90 0 0" scale="2 2 2"></a-entity>
         <a-entity phone id="phone" obj-model="obj:#phone-obj;mtl:#phone-mtl;" position="-5.5 -0.5 2.15" rotation="0 180.02333923010465 -45" scale="0.5 0.5 0.5">
             <a-animation begin="phone-ring" end="phone-end" attribute="scale" dur="1000" from="0.5 0.5 0.5" to="0.8 0.8 0.8" repeat="indefinite"></a-animation>
         </a-entity>
         <a-entity obj-model="obj:#photo-obj;mtl:#photo-mtl;" position="-7.2 0 4" rotation="90 0 0" scale="1.5 1.5 1.5"></a-entity>
-        <a-entity book obj-model="obj:#book-obj;mtl:#book-mtl;" position="2 0 0.15" rotation="90 0 0" scale="1.5 1.5 1.5"></a-entity>
+        <a-entity book hover-effect obj-model="obj:#book-obj;mtl:#book-mtl;" position="2 0 0.15" rotation="90 0 0" scale="1.5 1.5 1.5"></a-entity>
         <a-entity obj-model="obj:#tv-obj;mtl:#tv-mtl;" position="4.5 7 1.9" rotation="0 90 90" scale="1.5 1.5 1.5"></a-entity>
         <a-entity obj-model="obj:#bench-obj;mtl:#bench-mtl;" position="4.5 6.5 1" rotation="90 0 0" scale="5 5 5"></a-entity>
         <a-entity obj-model="obj:#dress-obj;mtl:#dress-mtl;" position="-0.5 -6 1.5" rotation="0 90 90" scale="1.5 1.5 1.5"></a-entity>
-        <a-entity envelope obj-model="obj:#envelope-obj;mtl:#envelope-mtl;" position="0 -6.5 0.009" rotation="-30 90 -90" scale="0.5 0.5 0.5"></a-entity>
-        <a-entity paper obj-model="obj:#document-obj;mtl:#document-mtl;" position="2 2.5 0.1" rotation="-90 0 0" scale="6 6 6"></a-entity>
-        <a-entity paper obj-model="obj:#document-obj;mtl:#document-mtl;" position="4 -2.5 0.1" rotation="-90 0 0" scale="6 6 6"></a-entity>
-        <a-entity paper obj-model="obj:#document-obj;mtl:#document-mtl;" position="-2 5 0.1" rotation="-90 0 0" scale="6 6 6"></a-entity>
+        <a-entity envelope hover-effect obj-model="obj:#envelope-obj;mtl:#envelope-mtl;" position="0 -6.5 0.009" rotation="-30 90 -90" scale="0.5 0.5 0.5"></a-entity>
+        <a-entity paper hover-effect obj-model="obj:#document-obj;mtl:#document-mtl;" position="2 2.5 0.1" rotation="-90 0 0" scale="6 6 6"></a-entity>
+        <a-entity paper hover-effect obj-model="obj:#document-obj;mtl:#document-mtl;" position="4 -2.5 0.1" rotation="-90 0 0" scale="6 6 6"></a-entity>
+        <a-entity paper hover-effect obj-model="obj:#document-obj;mtl:#document-mtl;" position="-2 5 0.1" rotation="-90 0 0" scale="6 6 6"></a-entity>
         <a-entity obj-model="obj:#art-obj;mtl:#art-mtl;" position="-7.4 -5 4.5" rotation="0 -90 90" scale="6 6 6"></a-entity>
       </a-plane>
 
@@ -178,6 +178,7 @@
             <a-entity id="button-defense" position="-1.6 1 1" geometry="primitive: plane; height: 0.5; width: 1.8" material="color:white; opacity: 0.8" text="width: 8; color: black; align: center; value: DEFENSE" defense></a-entity>
             <a-entity id="button-talk" position="1.2 1 1" geometry="primitive: plane; height: 0.5; width: 1" material="color:white; opacity: 0.8" text="width: 8; color: black; align: center; value: TALK" talk></a-entity>
             <a-entity id="combat-text" position="0 0.2 1" geometry="primitive: plane; height: 0.5; width: 6" material="color:black; opacity: 0.8" text="width: 4; color: white; align: center; value: OMG! What a monster!"></a-entity>
+            <a-entity id="button-end" visible="true" position="0 -1 1" geometry="primitive: plane; height: 0.5; width: 2" material="color:white; opacity: 0.8" text="width: 4; color: black; align: center; value: END GAME" onclick="switchToEndScene()"></a-entity>
             <!-- heart indicator -->
             <a-entity position="-0.2 -0.2 1">
                 <a-image id="jane_heart_1" position="-0.3 0 0" src="#heart" width="0.2" height="0.2"></a-image>
@@ -212,7 +213,9 @@
 
       <!-- Ending Scene -->
       <a-entity id="scene-end" visible="false">
-          <a-sky color="#EC0000"></a-sky>
+          <a-entity id="light-ambient" light="type: ambient; intensity: 1; color: #BBB"></a-entity>
+          <a-entity position="-4.5 1.5 -12" geometry="primitive: plane; height: 1; width: 3.6" material="color:black" text="width: 14; color: white; align: center; value: THE END"></a-entity>
+          <a-sky color="#000000"></a-sky>
       </a-entity>
       <!-- End of Ending Scene -->
 
@@ -225,6 +228,7 @@
         </a-entity>
         <a-entity id="light-point" light="type: point; color: #000; intensity: 0.8" position="0 0 -1">
             <a-animation begin="light-on" attribute="light.color" from="#000" to="#FFF" dur="1000"></a-animation>
+            <a-animation begin="light-off" attribute="light.color" from="#FFF" to="#000" dur="1000"></a-animation>
         </a-entity>
         <!-- Self model for mirror -->
         <a-entity position="0 -1 2">

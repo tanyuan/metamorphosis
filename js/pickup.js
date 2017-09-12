@@ -86,6 +86,8 @@ AFRAME.registerComponent('envelope', {
 						setTimeout(function(){
 							camera_text.setAttribute('visible', true);
 							camera_text.setAttribute('text', white_text('The phone on the table is ringing. Maybe I should get it.'));	
+                            // Start phone ringing animation
+                            document.querySelector('#phone').emit('phone-ring');
 						}, 5000);
 					}
 				};
@@ -156,6 +158,9 @@ AFRAME.registerComponent('phone', {
 				phone.setAttribute('visible', false);
 				camera_text.setAttribute('visible', false);
 				help_text.setAttribute('visible', false);
+
+                // End phone ringing animation
+                document.querySelector('#phone').emit('phone-end');
 
 				var phone_hand = document.querySelector('#phone-hand');
 

@@ -100,6 +100,7 @@ function set_event_plane(state, element_id) {
 		action_text_primary.setAttribute('text', black_text('LEAVE TOILET'));
 		action_text_secondary.setAttribute('text', black_text('CANCEL'));
 
+		action_text.setAttribute('visible', false);
 		event_text.setAttribute('visible', true);
 		action_text_primary.setAttribute('visible', true);
 		action_text_secondary.setAttribute('visible',true);

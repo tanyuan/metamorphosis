@@ -277,7 +277,7 @@ AFRAME.registerComponent('toilet-door', {
 					action_text_secondary.addEventListener('click', action_text_secondary_handler);
 				} else if (finite_state === 'toilet') {
 					// leaving toilet
-					set_event_plane('toilet_door_enter');
+					set_event_plane('toilet_door_leave');
 
 					action_text_primary_handler = function() {
 						finite_state = 'free';
@@ -445,6 +445,8 @@ AFRAME.registerComponent('look-at-mirror', {
 				action_text.setAttribute('visible', false);
 			}
 		};
+
+		action_text.addEventListener('click',action_text_handler);
 	}
 });
 

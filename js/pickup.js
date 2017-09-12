@@ -405,7 +405,7 @@ AFRAME.registerComponent('toilet', {
 	}
 });
 
-AFRAME.registerComponent('mirror', {
+AFRAME.registerComponent('look-at-mirror', {
 	init: function() {
 		var mirror = this.el;
 		mirror.addEventListener('click', function(){

@@ -160,11 +160,11 @@
         <a-box position="3.5 1 4" rotation="0 0 90" geometry="width:6;depth:8" color="#e3e3e3"></a-box>
 
         <!-- Room Door -->
-         <a-box position="-0.55 -2.2 3" rotation="0 0 0" geometry="depth:6;height:0.2;width:3" material="color:#3a4652" animation=""></a-box>
+         <a-box front-door position="-0.55 -2.2 3" rotation="0 0 0" geometry="depth:6;height:0.2;width:3" material="color:#3a4652" animation=""></a-box>
       </a-plane>
       
       <!-- Mirror in toilet -->
-      <a-entity position="-7.4 2.5 11">
+      <a-entity look-at-mirror position="-7.4 2.5 11">
         <a-box position="-0.2 0 0" width="0.5" height="3.5" depth="3.5" material="color: #3a4652;"></a-box>
         <a-box mirror="resolution: 512; repeat: true;" width="0.2" height="3" depth="3"></a-box>
       </a-entity>

@@ -544,6 +544,51 @@ AFRAME.registerComponent('mail-floor', {
 				mail.setAttribute('visible', true);
 				reset_event_plane();
 			};
+
+			action_text_handler = function(){
+				if (extra_stage_state === 1) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"And by the time you read this letter, you might figure out that something\'s wrong with your body."'));
+				} else if (extra_stage_state === 2) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"So this letter is meant to tell you what happened."'));
+				} else if (extra_stage_state === 3) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"You\'ve particpated in an elite program while serving the country."'));
+				} else if (extra_stage_state === 4) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"The program acclaimed that its purpose was to improve soldiers\' physical strength through medical injections."'));
+				} else if (extra_stage_state === 5) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"However, what the program didn\'t tell you was that the possible failure rate is way higher than the success rate."'));
+				} else if (extra_stage_state === 6) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"And a variety of side effects may occur, including body tansformation of any kind, which was happening to you right now."'));
+				} else if (extra_stage_state === 7) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"According to your officials, you would soon be injected with a cure."'));
+				} else if (extra_stage_state === 8) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"And you would be sent back to your house for recovering."'));
+				} else if (extra_stage_state === 9) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"However, it\'s very likely that there is no such thing as an cure."'));
+				} else if (extra_stage_state === 10) {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"I am not sure what would happen next."'));
+				} else if (extra_stage_state === 11)  {
+					extra_stage_state++;
+					event_text.setAttribute('text', white_text('"Be aware. Be safe."'));
+					action_text.setAttribute('text', black_text('END READING'));
+				} else if (extra_stage_state === 12) {
+					mail.setAttribute('visible', true);
+					reset_event_plane();
+				}
+			};
+
+			action_text.addEventListener('click',action_text_handler);
+			action_text_primary.addEventListener('click', action_text_primary_handler);
+			action_text_secondary.addEventListener('click', action_text_secondary_handler);
 		});
 	}
 });

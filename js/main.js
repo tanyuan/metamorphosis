@@ -123,6 +123,7 @@ function set_event_plane(state, element_id) {
 		action_text_secondary.setAttribute('visible',true);
 	} else if (state === 'free') {
 		// free explore
+		console.log(state,element_id);
 		if (element_id !== null) {
 			var element = document.querySelector(element_id);
 			element.setAttribute('visible', true);

@@ -496,3 +496,54 @@ AFRAME.registerComponent('book', {
 	}
 });
 
+AFRAME.registerComponent('painting', {
+	init: function() {
+		var painting = this.el;
+		painting.addEventListener('click', function(){
+			if (mail_show === false) {
+				// mail not shown
+				mail_show = true;
+				camera_text.setAttribute('text', white_text('Something fell on the door. Maybe I should take a look at it.'));
+				camera_text.setAttribute('visible', true);
+				var mail = document.querySelector('#mail');
+				mail.setAttribute('visible', true);
+
+				setTimeout(function(){
+					camera_text.setAttribute('visible', false);
+				}, 5000);
+			} else {
+				// mail shown
+				camera_text.setAttribute('text', white_text('A abstract painting. There is nothing special with it.'));
+				camera_text.setAttribute('visible', true);
+
+				setTimeout(function(){
+					camera_text.setAttribute('visible', false);
+				}, 3000);
+			}
+		});
+	}
+});
+
+
+AFRAME.registerComponent('mail-floor', {
+	init: function() {
+		var mail = this.el;
+		mail.addEventListener('click', function(){
+			set_event_plane('mail');
+			mail.setAttribute('visible', false);
+
+			action_text_primary_handler = function(){
+				action_text_primary.setAttribute('visible', false);
+				action_text_secondary.setAttribute('visible',false);
+
+				event_text.setAttribute('text', white_text('"Dear John, you must be wondering why you would receive a letter written by yourself."'));
+				action_text.setAttribute('visible', true);
+			};
+
+			action_text_secondary_handler = function(){
+				mail.setAttribute('visible', true);
+				reset_event_plane();
+			};
+		});
+	}
+});

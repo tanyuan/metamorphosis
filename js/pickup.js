@@ -455,6 +455,8 @@ AFRAME.registerComponent('front-door', {
 			if (fifth_stage_state > 1) {
 				set_event_plane('front_door_enter');
 				finite_state = 'combat';
+				var heart = document.querySelector('#jane_heart');
+				heart.setAttribute('visible', true);
 
 				action_text_handler = function() {
 					reset_event_plane();

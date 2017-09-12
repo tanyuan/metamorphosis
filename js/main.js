@@ -100,6 +100,7 @@ function set_event_plane(state, element_id) {
 		action_text_primary.setAttribute('text', black_text('LEAVE TOILET'));
 		action_text_secondary.setAttribute('text', black_text('CANCEL'));
 
+		action_text.setAttribute('visible', false);
 		event_text.setAttribute('visible', true);
 		action_text_primary.setAttribute('visible', true);
 		action_text_secondary.setAttribute('visible',true);
@@ -124,7 +125,7 @@ function set_event_plane(state, element_id) {
 	} else if (state === 'free') {
 		// free explore
 		console.log(state,element_id);
-		if (element_id !== null) {
+		if (element_id !== null && element_id !== undefined) {
 			var element = document.querySelector(element_id);
 			element.setAttribute('visible', true);
 		}

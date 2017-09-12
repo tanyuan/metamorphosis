@@ -450,21 +450,49 @@ AFRAME.registerComponent('look-at-mirror', {
 
 AFRAME.registerComponent('front-door', {
 	init: function(){
-		if (fifth_stage_state > 1) {
-			set_event_plane('front_door_enter');
-			finite_state = 'combat';
+		var door = this.el;
+		door.addEventListener('click', function () {
+			if (fifth_stage_state > 1) {
+				set_event_plane('front_door_enter');
+				finite_state = 'combat';
 
-			action_text_handler = function() {
-				reset_event_plane();
-				// TODO: Enter combat
-                
-			};
-			action_text.addEventListener('click', action_text_handler);
+				action_text_handler = function() {
+					reset_event_plane();
+					// TODO: Enter combat
+	                
+				};
+				action_text.addEventListener('click', action_text_handler);
 
-		} else {
-			camera_text.setAttribute('text', white_text('There is something else I need to do first.'));
-			camera_text.setAttribute('visible', true);
-		}
+			} else {
+				camera_text.setAttribute('text', white_text('There is something else I need to do first.'));
+				camera_text.setAttribute('visible', true);
+			}
+		});
+	}
+});
+
+AFRAME.registerComponent('book', {
+	init: function() {
+		var book = this.el;
+		book.addEventListener('click', function() {
+			if (finite_state === 'free') {
+				set_event_plane(finite_state,'#book-hand');
+				book.setAttribute('visible', false);
+				camera_text.setAttribute('visible', false);
+				help_text.setAttribute('visible', false);
+				event_text.setAttribute('text', white_text('A stack of books. Seems that the owner of this room has a green thumb.'));
+				action_text.setAttribute('text', black_text('PUT BACK'));
+
+				action_text_handler = function(){
+					book.setAttribute('visible', true);
+					reset_event_plane();
+				};
+
+				action_text.addEventListener('click',action_text_handler);
+			} else {
+				return;
+			}
+		});
 	}
 });
 

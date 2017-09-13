@@ -10,17 +10,6 @@ var jane_action = 0;
 // debug states
 var game_state = 1;
 
-AFRAME.registerComponent('combat', {
-	init: function () {
-		var door = this.el;
-		door.addEventListener('click', function (evt) {
-            document.getElementById('hit-hand').setAttribute('visible', 'true')
-            document.querySelector('#hit-hand').emit('hit');
-            console.log('hit');
-		});
-	}
-});
-
 AFRAME.registerComponent('defense', {
 	init: function () {
 		var button = this.el;

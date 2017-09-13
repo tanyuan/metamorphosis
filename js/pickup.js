@@ -194,19 +194,19 @@ AFRAME.registerComponent('phone', {
 						event_text.setAttribute('text', white_text('Oh…, I’m sorry. I\'m somewhere strange.'));
 					} else if (fourth_stage_state === 5) {
 						fourth_stage_state++;
-						event_text.setAttribute('text', white_text('"What do you mean by strange? I have been waiting you at the meeting point for hours"'));
+						event_text.setAttribute('text', white_text('"What do you mean by strange? I have been waiting for you at the meeting point for hours!"'));
 					} else if (fourth_stage_state === 6) {
 						fourth_stage_state++;
-						event_text.setAttribute('text', white_text('I can\'t meet you at the cafe, Jane. I need to prepare for the enlistment.'));
+						event_text.setAttribute('text', white_text('What meeting point?'));
 					} else if (fourth_stage_state === 7) {
 						fourth_stage_state++;
-						event_text.setAttribute('text', white_text('"What enlistment? You just came back from the military department yesterday, and we are supposed to have a date today."'));
+						event_text.setAttribute('text', white_text('"The place where we should meet on the day you come back from the military?"'));
 					} else if (fourth_stage_state === 8) {
 						fourth_stage_state++;
 						event_text.setAttribute('text', white_text('What do you mean by that? My term starts from ' + current_date_string + ', and that\'s tomorrow.'));
 					} else if (fourth_stage_state === 9) {
 						fourth_stage_state++;
-						event_text.setAttribute('text', white_text('"John, are you out of your mind? It\'s '+ future_date_string + ' today, and you got out of the military one day eariler."'));
+						event_text.setAttribute('text', white_text('"John, are you out of your mind? It\'s '+ future_date_string + ' today, and today should be the last day of your service."'));
 					} else if (fourth_stage_state === 10) {
 						fourth_stage_state++;
 						event_text.setAttribute('text', white_text('You\'re kidding me! I haven\'t even joined the special forces!'));

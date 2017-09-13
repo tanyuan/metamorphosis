@@ -187,7 +187,12 @@
         <a-box toilet-door position="-0.55 2.8 3" rotation="0 0 0" geometry="depth:6;height:0.2;width:3" material="color:#3a4652" animation=""></a-box>
 
         <!-- Toilet Object -->
-        <a-entity toilet hover-effect obj-model="obj:#toilet-obj;mtl:#toilet-mtl;" position="2 -2 1.5" rotation="90 0 0" scale="5 5 5"></a-entity>
+        <a-entity toilet hover-effect position="1.5 -1 1.5">
+            <a-box position="0 -1.13 0.82" scale="1.3 0.6 0.25" material=""></a-box>
+            <a-box position="0 -1.13 0" scale="1.3 0.5 1.626" material=""></a-box>
+            <a-cylinder position="0 0 0.061" rotation="90 0 0" material="" geometry="radius:1.1;height:0.2"></a-cylinder>
+            <a-sphere rotation="-90 0 0" material="" geometry="thetaLength:90"></a-sphere>
+        </a-entity>
       </a-plane>
 
       <!-- Entrance Scene -->

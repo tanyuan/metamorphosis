@@ -6,12 +6,6 @@
   <body>
     <a-scene travel-node-default="axis: x,y,z; offsetY: 0.75">
 
-      <!-- Assets Management -->
-      <a-assets>
-        <!-- heart icon -->
-        <img id="heart" src="img/heart.png">
-      </a-assets>
-
     <!-- Start Scene -->
     <a-entity id="scene-start" visible="true">
       <a-entity id="light-ambient" light="type: ambient; intensity: 1; color: #BBB"></a-entity>
@@ -184,12 +178,6 @@
             <a-entity id="button-talk" position="0.5 0.5 1.5" geometry="primitive: plane; height: 0.2; width: 0.5" material="color:white; opacity: 0.8" text="width: 1; color: black; align: center; value: TALK" talk hover-effect></a-entity>
             <a-entity id="combat-text" position="0 0.2 1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color:black; opacity: 0.8" text="width: 1; color: white; align: center; value: OMG! What a monster!"></a-entity>
             <a-entity id="button-end" visible="false" position="0 0 1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color:white; opacity: 0.8" text="width: 1; color: black; align: center; value: END GAME" onclick="switchToEndScene()" hover-effect></a-entity>
-            <!-- heart indicator -->
-            <a-entity position="-0.2 -0.2 1">
-                <a-image id="jane_heart_1" position="-0.2 0.5 1" src="#heart" width="0.05" height="0.05"></a-image>
-                <a-image id="jane_heart_2" position="0 0.5 1" src="#heart" width="0.05" height="0.05"></a-image>
-                <a-image id="jane_heart_3" position="0.2 0.5 1" src="#heart" width="0.05" height="0.05"></a-image>
-            </a-entity>
         </a-entity>
       </a-entity>
 
@@ -283,12 +271,6 @@
             <a-sphere position="-0.3 1.6 -0.2" scale="0.1 0.1 0.1" material="color:#ffffff;height:100"></a-sphere>
             <a-box></a-box>
             <a-sphere></a-sphere>
-        </a-entity>
-        <!-- heart indicator -->
-        <a-entity position="0 0.5 -1.5" id="john_heart" visible="false">
-            <a-image id="john_heart_1" position="-0.2 0 0" src="#heart" width="0.1" height="0.1"></a-image>
-            <a-image id="john_heart_2" position="0 0 0" src="#heart" width="0.1" height="0.1"></a-image>
-            <a-image id="john_heart_3" position="0.2 0 0" src="#heart" width="0.1" height="0.1"></a-image>
         </a-entity>
         <a-entity id="camera-text" visible="false" position="0 -0.25 -1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color: #333333" text="width:1; color: white; align: center; value: Oh God, my throat burns like hell. I need some water."></a-entity>
         <a-entity id="help-text" visible="false" position="0 -0.5 -1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color: white; opacity:0.5;" text="width:1; color: white; align: center; value: Gaze at the water to drink."></a-entity>

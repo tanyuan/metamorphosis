@@ -21,7 +21,6 @@ AFRAME.registerComponent('defense', {
                     // Jane Listen
                     game_status_str = 'Jane tries to listen to you but you defense...';
                     jane_lives--;
-                    refreshJaneHeart();
                     if (jane_lives == 0) {
                         game_state = 0;
                         game_status_str = 'You killed Jane!';
@@ -68,7 +67,6 @@ AFRAME.registerComponent('talk', {
                     // Jane Attack
                     game_status_str = 'You try to explain but Jane attacks you!';
                     john_lives--;
-                    refreshJohnHeart();
                     if (john_lives == 0) {
                         game_state = 0;
                         game_status_str = 'You are killed by Jane.';
@@ -100,66 +98,4 @@ function endGame() {
     button_defense.setAttribute('visible', 'false');
     button_talk.setAttribute('visible', 'false');
     button_end.setAttribute('visible', 'true');
-}
-
-function refreshJohnHeart() {
-    var heart_1 = document.getElementById('john_heart_1');
-    var heart_2 = document.getElementById('john_heart_2');
-    var heart_3 = document.getElementById('john_heart_3');
-
-    switch(john_lives) {
-        case 3:
-            break;
-        case 2:
-            heart_3.setAttribute('visible', 'false');
-            break;
-        case 1:
-            heart_3.setAttribute('visible', 'false');
-            heart_2.setAttribute('visible', 'false');
-            break;
-        default:
-            heart_3.setAttribute('visible', 'false');
-            heart_2.setAttribute('visible', 'false');
-            heart_1.setAttribute('visible', 'false');
-    }
-}
-
-function refreshJaneHeart() {
-    var heart_1 = document.getElementById('jane_heart_1');
-    var heart_2 = document.getElementById('jane_heart_2');
-    var heart_3 = document.getElementById('jane_heart_3');
-
-    switch(jane_lives) {
-        case 3:
-            break;
-        case 2:
-            heart_3.setAttribute('visible', 'false');
-            break;
-        case 1:
-            heart_3.setAttribute('visible', 'false');
-            heart_2.setAttribute('visible', 'false');
-            break;
-        default:
-            heart_3.setAttribute('visible', 'false');
-            heart_2.setAttribute('visible', 'false');
-            heart_1.setAttribute('visible', 'false');
-    }
-}
-
-function black_text_big(message) {
-	return {
-		width: 4, 
-		color: 'black', 
-		align: 'center', 
-		value: message
-	};
-}
-
-function white_text_big(message) {
-	return {
-		width: 4, 
-		color: 'white', 
-		align: 'center', 
-		value: message
-	};
 }

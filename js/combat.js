@@ -13,12 +13,6 @@ var game_state = 1;
 AFRAME.registerComponent('defense', {
 	init: function () {
 		var button = this.el;
-		button.addEventListener('mouseenter', function (evt) {
-            button.setAttribute('scale', '1.2 1.2 1.2');
-        });
-		button.addEventListener('mouseleave', function (evt) {
-            button.setAttribute('scale', '1.0 1.0 1.0');
-        });
 		button.addEventListener('click', function (evt) {
             var combat_text = document.getElementById('combat-text');
             if (game_state == 1) {
@@ -37,7 +31,7 @@ AFRAME.registerComponent('defense', {
                     // Jane Attack
                     game_status_str = 'Jane attacks you! Thankfully you defense!';
                 }
-                combat_text.setAttribute('text', white_text_big(game_status_str));
+                combat_text.setAttribute('text', white_text(game_status_str));
             }
             printGameStatus();
 		});
@@ -47,12 +41,6 @@ AFRAME.registerComponent('defense', {
 AFRAME.registerComponent('talk', {
 	init: function () {
 		var button = this.el;
-		button.addEventListener('mouseenter', function (evt) {
-            button.setAttribute('scale', '1.2 1.2 1.2');
-        });
-		button.addEventListener('mouseleave', function (evt) {
-            button.setAttribute('scale', '1.0 1.0 1.0');
-        });
 		button.addEventListener('click', function (evt) {
             var combat_text = document.getElementById('combat-text');
             if (game_state == 1) {
@@ -87,7 +75,7 @@ AFRAME.registerComponent('talk', {
                         endGame();
                     }
                 }
-                combat_text.setAttribute('text', white_text_big(game_status_str));
+                combat_text.setAttribute('text', white_text(game_status_str));
             }
             printGameStatus();
 		});
@@ -108,8 +96,10 @@ function getJaneAction() {
 function endGame() {
     var button_defense = document.getElementById('button-defense');
     var button_talk = document.getElementById('button-talk');
+    var button_end = document.getElementById('button-end');
     button_defense.setAttribute('visible', 'false');
     button_talk.setAttribute('visible', 'false');
+    button_end.setAttribute('visible', 'true');
 }
 
 function refreshJohnHeart() {

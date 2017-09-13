@@ -85,7 +85,7 @@
     <a-entity id="scene-start" visible="true">
       <a-entity id="light-ambient" light="type: ambient; intensity: 1; color: #BBB"></a-entity>
       <a-entity position="6 3 2" geometry="primitive: plane; height: 1; width: 3.6" material="color:black" text="width: 14; color: white; align: center; value: METAMORPHOSIS"></a-entity>
-      <a-entity position="6 1 2" geometry="primitive: plane; height: 1; width: 3.6" material="color:white" text="width: 14; color: black; align: center; value: WAKE UP" onclick="switchToMainScene()"></a-entity>
+      <a-entity position="6 1 2" geometry="primitive: plane; height: 1; width: 3.6" material="color:white" text="width: 14; color: black; align: center; value: WAKE UP" onclick="switchToMainScene()" hover-effect></a-entity>
       <a-sky color="#000000"></a-sky>
     </a-entity>
     <!-- End of Start Scene -->
@@ -173,18 +173,18 @@
       </a-entity>
 
       <!-- Jane -->
-      <a-entity position="-4.5 1.8 -12" rotation="0 180 0">
-        <a-entity obj-model="obj:#girl-obj;mtl:#girl-mtl;" scale="20 20 20"></a-entity>
+      <a-entity position="-4.5 1.5 -12" rotation="0 180 0">
+        <a-entity obj-model="obj:#girl-obj;mtl:#girl-mtl;" scale="10 10 10"></a-entity>
         <a-entity rotation="0 180 0">
-            <a-entity id="button-defense" position="-1.6 1 1" geometry="primitive: plane; height: 0.5; width: 1.8" material="color:white; opacity: 0.8" text="width: 8; color: black; align: center; value: DEFENSE" defense></a-entity>
-            <a-entity id="button-talk" position="1.2 1 1" geometry="primitive: plane; height: 0.5; width: 1" material="color:white; opacity: 0.8" text="width: 8; color: black; align: center; value: TALK" talk></a-entity>
-            <a-entity id="combat-text" position="0 0.2 1" geometry="primitive: plane; height: 0.5; width: 6" material="color:black; opacity: 0.8" text="width: 4; color: white; align: center; value: OMG! What a monster!"></a-entity>
-            <a-entity id="button-end" visible="true" position="0 -1 1" geometry="primitive: plane; height: 0.5; width: 2" material="color:white; opacity: 0.8" text="width: 4; color: black; align: center; value: END GAME" onclick="switchToEndScene()"></a-entity>
+            <a-entity id="button-defense" position="-0.5 0.5 1.5" geometry="primitive: plane; height: 0.2; width: 0.5" material="color:white; opacity: 0.8" text="width: 1; color: black; align: center; value: DEFENSE" defense hover-effect></a-entity>
+            <a-entity id="button-talk" position="0.5 0.5 1.5" geometry="primitive: plane; height: 0.2; width: 0.5" material="color:white; opacity: 0.8" text="width: 1; color: black; align: center; value: TALK" talk hover-effect></a-entity>
+            <a-entity id="combat-text" position="0 0.2 1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color:black; opacity: 0.8" text="width: 1; color: white; align: center; value: OMG! What a monster!"></a-entity>
+            <a-entity id="button-end" visible="false" position="0 0 1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color:white; opacity: 0.8" text="width: 1; color: black; align: center; value: END GAME" onclick="switchToEndScene()" hover-effect></a-entity>
             <!-- heart indicator -->
             <a-entity position="-0.2 -0.2 1">
-                <a-image id="jane_heart_1" position="-0.3 0 0" src="#heart" width="0.2" height="0.2"></a-image>
-                <a-image id="jane_heart_2" position="0 0 0" src="#heart" width="0.2" height="0.2"></a-image>
-                <a-image id="jane_heart_3" position="0.3 0 0" src="#heart" width="0.2" height="0.2"></a-image>
+                <a-image id="jane_heart_1" position="-0.2 0.5 1" src="#heart" width="0.05" height="0.05"></a-image>
+                <a-image id="jane_heart_2" position="0 0.5 1" src="#heart" width="0.05" height="0.05"></a-image>
+                <a-image id="jane_heart_3" position="0.2 0.5 1" src="#heart" width="0.05" height="0.05"></a-image>
             </a-entity>
         </a-entity>
       </a-entity>
@@ -237,10 +237,10 @@
           <a-entity obj-model="obj:#pony-obj;mtl:#pony-mtl;" position="0 0 0" rotation="0 90 0" scale="6 6 6"></a-entity>
         </a-entity>
         <!-- heart indicator -->
-        <a-entity position="0 1.4 -2" id="john_heart" visible="false">
-            <a-image id="john_heart_1" position="-0.3 0 0" src="#heart" width="0.2" height="0.2"></a-image>
-            <a-image id="john_heart_2" position="0 0 0" src="#heart" width="0.2" height="0.2"></a-image>
-            <a-image id="john_heart_3" position="0.3 0 0" src="#heart" width="0.2" height="0.2"></a-image>
+        <a-entity position="0 0.5 -1.5" id="john_heart" visible="false">
+            <a-image id="john_heart_1" position="-0.2 0 0" src="#heart" width="0.1" height="0.1"></a-image>
+            <a-image id="john_heart_2" position="0 0 0" src="#heart" width="0.1" height="0.1"></a-image>
+            <a-image id="john_heart_3" position="0.2 0 0" src="#heart" width="0.1" height="0.1"></a-image>
         </a-entity>
         <a-entity id="camera-text" visible="false" position="0 -0.25 -1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color: #333333" text="width:1; color: white; align: center; value: Oh God, my throat burns like hell. I need some water."></a-entity>
         <a-entity id="help-text" visible="false" position="0 -0.5 -1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color: white; opacity:0.5;" text="width:1; color: white; align: center; value: Gaze at the water to drink."></a-entity>

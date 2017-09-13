@@ -194,7 +194,7 @@ AFRAME.registerComponent('phone', {
 						event_text.setAttribute('text', white_text('Oh…, I’m sorry. I\'m somewhere strange.'));
 					} else if (fourth_stage_state === 5) {
 						fourth_stage_state++;
-						event_text.setAttribute('text', white_text('"What do you mean by strange? And aren\'t we supposed to meet at the cafe?"'));
+						event_text.setAttribute('text', white_text('"What do you mean by strange? I have been waiting you at the meeting point for hours"'));
 					} else if (fourth_stage_state === 6) {
 						fourth_stage_state++;
 						event_text.setAttribute('text', white_text('I can\'t meet you at the cafe, Jane. I need to prepare for the enlistment.'));

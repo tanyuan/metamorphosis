@@ -74,9 +74,6 @@
         <!-- Jane -->
         <a-asset-item id="girl-mtl" src="./blocks/girl/materials.mtl"></a-asset-item>
         <a-asset-item id="girl-obj" src="./blocks/girl/model.obj"></a-asset-item>
-        <!-- hand -->
-        <a-asset-item id="hand-mtl" src="./blocks/hand/materials.mtl"></a-asset-item>
-        <a-asset-item id="hand-obj" src="./blocks/hand/model.obj"></a-asset-item>
         <!-- heart icon -->
         <img id="heart" src="img/heart.png">
         <!-- Mail -->
@@ -244,12 +241,6 @@
             <a-image id="john_heart_1" position="-0.3 0 0" src="#heart" width="0.2" height="0.2"></a-image>
             <a-image id="john_heart_2" position="0 0 0" src="#heart" width="0.2" height="0.2"></a-image>
             <a-image id="john_heart_3" position="0.3 0 0" src="#heart" width="0.2" height="0.2"></a-image>
-        </a-entity>
-        <!-- Fist animation in combat -->
-        <a-entity position="0 0 -0.5">
-          <a-entity id="hit-hand" visible="false" obj-model="obj:#hand-obj;mtl:#hand-mtl;" position="0 0 0" rotation="7 -160 -95" scale="1 1 1">
-            <a-animation begin="hit" attribute="position" from="-1 0 -1" to="2 0 2" duration="20000"></a-animation>
-          </a-entity>
         </a-entity>
         <a-entity id="camera-text" visible="false" position="0 -0.25 -1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color: #333333" text="width:1; color: white; align: center; value: Oh God, my throat burns like hell. I need some water."></a-entity>
         <a-entity id="help-text" visible="false" position="0 -0.5 -1.5" geometry="primitive: plane; height: 0.2; width: 1" material="color: white; opacity:0.5;" text="width:1; color: white; align: center; value: Gaze at the water to drink."></a-entity>

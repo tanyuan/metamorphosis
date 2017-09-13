@@ -8,62 +8,8 @@
 
       <!-- Assets Management -->
       <a-assets>
-        <!-- Bed -->
-        <a-asset-item id="bed-mtl" src="./blocks/bed/materials.mtl"></a-asset-item>
-        <a-asset-item id="bed-obj" src="./blocks/bed/model.obj"></a-asset-item>
-        <!-- Night Stand -->
-        <a-asset-item id="nightstand-mtl" src="./blocks/materials1.mtl"></a-asset-item>
-        <a-asset-item id="nightstand-obj" src="./blocks/nightstand/model.obj"></a-asset-item>
-        <!-- Toilet -->
-        <a-asset-item id="toilet-mtl" src="./blocks/materials1.mtl"></a-asset-item>
-        <a-asset-item id="toilet-obj" src="./blocks/toilet/model.obj"></a-asset-item>
-        <!-- Water -->
-        <a-asset-item id="water-mtl" src="../blocks/materials1.mtl"></a-asset-item>
-        <a-asset-item id="water-obj" src="./blocks/water/model.obj"></a-asset-item>
-        <!-- Table -->
-        <a-asset-item id="table-mtl" src="./blocks/materials1.mtl"></a-asset-item>
-        <a-asset-item id="table-obj" src="./blocks/table/model.obj"></a-asset-item>
-        <!-- Plant -->
-        <a-asset-item id="plant-mtl" src="./blocks/materials1.mtl"></a-asset-item>
-        <a-asset-item id="plant-obj" src="./blocks/plant/model.obj"></a-asset-item>
-        <!-- Book Shelf -->
-        <a-asset-item id="bookshelf-mtl" src="./blocks/materials1.mtl"></a-asset-item>
-        <a-asset-item id="bookshelf-obj" src="./blocks/bookshelf/model.obj"></a-asset-item>
-        <!-- Phone -->
-        <a-asset-item id="phone-mtl" src="./blocks/materials1.mtl"></a-asset-item>
-        <a-asset-item id="phone-obj" src="./blocks/phone/model.obj"></a-asset-item>
-        <!-- Book -->
-        <a-asset-item id="book-mtl" src="./blocks/materials1.mtl"></a-asset-item>
-        <a-asset-item id="book-obj" src="./blocks/book/model.obj"></a-asset-item>
-        <!-- TV -->
-        <a-asset-item id="tv-mtl" src="./blocks/materials1.mtl"></a-asset-item>
-        <a-asset-item id="tv-obj" src="./blocks/television/model.obj"></a-asset-item>
-        <!-- TV Bench -->
-        <a-asset-item id="bench-mtl" src="./blocks/materials1.mtl"></a-asset-item>
-        <a-asset-item id="bench-obj" src="./blocks/bench/model.obj"></a-asset-item>
-        <!-- Dress -->
-        <a-asset-item id="dress-mtl" src="./blocks/materials1.mtl"></a-asset-item>
-        <a-asset-item id="dress-obj" src="./blocks/dress/model.obj"></a-asset-item>
-        <!-- envelope -->
-        <a-asset-item id="envelope-mtl" src="./blocks/materials1.mtl"></a-asset-item>
-        <a-asset-item id="envelope-obj" src="./blocks/envelope/model.obj"></a-asset-item>
-        <!-- document -->
-        <a-asset-item id="document-mtl" src="./blocks/materials1.mtl"></a-asset-item>
-        <a-asset-item id="document-obj" src="./blocks/document/model.obj"></a-asset-item>
-        <!-- art -->
-        <a-asset-item id="art-mtl" src="./blocks/materials1.mtl"></a-asset-item>
-        <a-asset-item id="art-obj" src="./blocks/art/model.obj"></a-asset-item>
-        <!-- John -->
-        <a-asset-item id="pony-mtl" src="./blocks/pony/materials.mtl"></a-asset-item>
-        <a-asset-item id="pony-obj" src="./blocks/pony/model.obj"></a-asset-item>
-        <!-- Jane -->
-        <a-asset-item id="girl-mtl" src="./blocks/materials1.mtl"></a-asset-item>
-        <a-asset-item id="girl-obj" src="./blocks/girl/model.obj"></a-asset-item>
         <!-- heart icon -->
         <img id="heart" src="img/heart.png">
-        <!-- Mail -->
-        <a-asset-item id="mail-mtl" src="./blocks/materials1.mtl"></a-asset-item>
-        <a-asset-item id="mail-obj" src="./blocks/mail/model.obj"></a-asset-item>
       </a-assets>
 
     <!-- Start Scene -->
@@ -112,9 +58,17 @@
           <a-box position="5.77 -7.32 0.251" geometry="height:0.5;depth:3;width:3.5" color="#e3e3e3" material="color:#000000"></a-box>
         </a-entity>
         <!-- paper on floor -->
-        <a-entity paper hover-effect>
-          <a-box position="3.482 -1.342 0.02" geometry="width:0.7;height:0.5;depth:0.05" color="#e3e3e3" material="color:#FFF"></a-box>
-          <a-box position="3.482 -1.342 0.01" rotation="0 0 -18.850311459804086" geometry="depth:0.05;height:0.5;width:0.7" color="#e3e3e3" material="color:#FFF"></a-box>
+        <a-entity paper hover-effect position="3.482 -1.342 0.01">
+          <a-box position="0 0 0.01" geometry="width:0.7;height:0.5;depth:0.05" color="#e3e3e3" material="color:#FFF"></a-box>
+          <a-box position="0 0 0" rotation="0 0 -18.850311459804086" geometry="depth:0.05;height:0.5;width:0.7" color="#e3e3e3" material="color:#FFF"></a-box>
+        </a-entity>
+        <a-entity paper="" hover-effect="" position="1.629 2.577 0.01">
+          <a-box position="0 0 0.01" geometry="depth:0.05;height:0.5;width:0.7" color="#e3e3e3" material="color:#FFF"></a-box>
+          <a-box rotation="0 0 -18.850311459804086" geometry="depth:0.05;height:0.5;width:0.7" color="#e3e3e3" material="color:#FFF"></a-box>
+        </a-entity>
+        <a-entity paper="" hover-effect="" position="3.01 5.002 0.01">
+          <a-box position="0 0 0.01" geometry="depth:0.05;height:0.5;width:0.7" color="#e3e3e3" material="color:#FFF"></a-box>
+          <a-box rotation="0 0 -18.850311459804086" geometry="depth:0.05;height:0.5;width:0.7" color="#e3e3e3" material="color:#FFF"></a-box>
         </a-entity>
         <!-- night stand -->
         <a-entity night-stand hover-effect position="3.2 -7 0.5">
@@ -124,11 +78,16 @@
         </a-entity>
         <!-- water -->
         <a-entity water-cup hover-effect position="3.2 -7 1.58">
-          <a-box></a-box>
+          <a-cylinder rotation="90.01166961505233 0 0" material="" geometry="height:0.4;radius:0.15"></a-cylinder>
+          <a-circle position="0.037 0.003 0.215" material="color:#00ffff" geometry="radius:0.13"></a-circle>
         </a-entity>
         <!-- table -->
         <a-entity position="-6.5 0 2.2">
-          <a-box></a-box>
+          <a-box position="0.481 0 -0.284" material="color:#996633" geometry="depth:0.3;width:3;height:5"></a-box>
+          <a-box position="1.818 -2.344 -1.202" material="color:#996633" geometry="depth:2;height:0.3;width:0.3"></a-box>
+          <a-box position="-0.842 -2.344 -1.202" material="color:#996633" geometry="depth:2;height:0.3;width:0.3"></a-box>
+          <a-box position="1.844 2.319 -1.202" material="color:#996633" geometry="depth:2;height:0.3;width:0.3"></a-box>
+          <a-box position="-0.842 2.367 -1.202" material="color:#996633" geometry="depth:2;height:0.3;width:0.3"></a-box>
         </a-entity>
         <!-- plant -->
         <a-entity plant hover-effect position="-1.75 6.5 0.8">
@@ -140,12 +99,13 @@
         </a-entity>
         <!-- phone -->
         <a-entity phone id="phone" position="-5.5 -0.5 2.15">
-          <a-box></a-box>
+          <a-box position="0 0 -0.066" material="color:#333" geometry="height:0.3;width:0.5;depth:0.05"></a-box>
           <a-animation begin="phone-ring" end="phone-end" attribute="scale" dur="1000" from="0.5 0.5 0.5" to="0.8 0.8 0.8" repeat="indefinite"></a-animation>
         </a-entity>
         <!-- book -->
         <a-entity book hover-effect position="2 0 0.15">
-          <a-box></a-box>
+          <a-box position="0 0 -0.087" material="color:#800080" geometry="width:0.8;height:0.6;depth:0.12"></a-box>
+          <a-box position="0 0 0.031" material="color:#6d5cae" geometry="depth:0.12;height:0.6;width:0.8" rotation="0 0 -14.495832216809827"></a-box>
         </a-entity>
         <!-- TV -->
         <a-entity position="4.5 7 1.9">
@@ -157,23 +117,25 @@
         </a-entity>
         <!-- dress -->
         <a-entity position="-0.5 -6 1.5">
-          <a-box></a-box>
+          <a-box position="0.726 -1.005 -0.252" material="color:#333333" geometry="width:4;depth:2.5"></a-box>
+          <a-box position="0.726 -0.644 0.655" material="color:#804000" geometry="depth:0.1;height:0.4"></a-box>
+          <a-box position="0.726 -0.644 0.006" material="color:#804000" geometry="depth:0.1;height:0.4"></a-box>
+          <a-box position="0.726 -0.644 -0.686" material="color:#804000" geometry="depth:0.1;height:0.4"></a-box>
         </a-entity>
         <!-- envelope -->
         <a-entity envelope hover-effect position="0 -6.5 0.009">
-          <a-box></a-box>
-        </a-entity>
-        <!-- paper -->
-        <a-entity paper hover-effect position="2 2.5 0.1">
-          
+          <a-box rotation="0 0 -39.5340878640268" material="color:#996633" geometry="width:0.8;depth:0.05"></a-box>
         </a-entity>
         <!-- painting -->
         <a-entity painting position="-7.4 -5 4.5">
-          <a-box></a-box>
+          <a-box position="-0.114 0 0" material="color:#000000" geometry="height:3;width:0.2;depth:4"></a-box>
+          <a-box position="-0.048 0.57 0.994" material="color:#ff0000" geometry="depth:2;width:0.2"></a-box>
+          <a-box position="-0.048 -0.165 -0.633" material="color:#ffffff" geometry="depth:2;width:0.2"></a-box>
+          <a-box position="-0.048 -1.003 0.266" material="color:#ffff00" geometry="depth:2;width:0.2"></a-box>
         </a-entity>
         <!-- mail -->
         <a-entity id="mail" visible="false" mail-floor position="-7 -5 0.1">
-          <a-box></a-box>
+          <a-box rotation="0 0 -39.534" material="color:#ff8000" geometry="width:0.5;height:0.8;depth:0.05"></a-box>
         </a-entity>
       </a-plane>
 

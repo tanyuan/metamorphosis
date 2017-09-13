@@ -82,7 +82,7 @@
           <a-circle position="0.037 0.003 0.215" material="color:#00ffff" geometry="radius:0.13"></a-circle>
         </a-entity>
         <!-- table -->
-        <a-entity position="-6.5 0 2.2">
+        <a-entity position="-6.5 0 1.7" scale="0.8 0.8 0.8">
           <a-box position="0.481 0 -0.284" material="color:#996633" geometry="depth:0.3;width:3;height:5"></a-box>
           <a-box position="1.818 -2.344 -1.202" material="color:#996633" geometry="depth:2;height:0.3;width:0.3"></a-box>
           <a-box position="-0.842 -2.344 -1.202" material="color:#996633" geometry="depth:2;height:0.3;width:0.3"></a-box>
@@ -98,7 +98,7 @@
           <a-box></a-box>
         </a-entity>
         <!-- phone -->
-        <a-entity phone id="phone" position="-5.5 -0.5 2.15">
+        <a-entity phone id="phone" position="-5.5 -0.5 1.7">
           <a-box position="0 0 -0.066" material="color:#333" geometry="height:0.3;width:0.5;depth:0.05"></a-box>
           <a-animation begin="phone-ring" end="phone-end" attribute="scale" dur="1000" from="0.5 0.5 0.5" to="0.8 0.8 0.8" repeat="indefinite"></a-animation>
         </a-entity>
@@ -172,8 +172,8 @@
       </a-entity>
 
       <!-- Jane -->
-      <a-entity position="-4.5 1.5 -12" rotation="0 180 0">
-        <a-entity>
+      <a-entity position="-4.5 1.5 -13.5" rotation="0 180 0">
+        <a-entity position="0 1 0">
             <a-sphere position="0.164 -0.183 -0.273" scale="0.1 0.1 0.1" material="color:#171412" geometry=""></a-sphere>
             <a-sphere position="-0.01 -0.2 0.04" scale="0.5 0.3 0.3" material="color:#feff62"></a-sphere>
             <a-sphere position="-0.09 -0.18 -0.27" scale="0.1 0.1 0.1" material="color:#161311"></a-sphere>
@@ -201,6 +201,10 @@
       <a-plane id="event-plane" position="0 0 -20" material="opacity:0">
         <!-- elements -->
         <a-entity id="water-cup-hand" visible="false" obj-model="obj:#water-obj;mtl:#water-mtl" position="0 0.25 -2.5" rotation="50 50 50" scale="4 4 4"></a-entity>
+        <a-entity water-cup hover-effect position="3.2 -7 1.58">
+          <a-cylinder rotation="90.01166961505233 0 0" material="" geometry="height:0.4;radius:0.15"></a-cylinder>
+          <a-circle position="0.037 0.003 0.215" material="color:#00ffff" geometry="radius:0.13"></a-circle>
+        </a-entity>
         <a-entity id="envelope-hand" visible="false" obj-model="obj:#envelope-obj;mtl:#envelope-mtl;" position="0 0.25 -2.5" rotation="90 -45 0" scale="0.5 0.5 0.5"></a-entity>
         <a-entity id="phone-hand" visible="false" obj-model="obj:#phone-obj;mtl:#phone-mtl;" position="0.03 0.4 -2" rotation="0 180 0" scale="0.5 0.5 0.5"></a-entity>
         <a-entity id="night-stand-hand" visible="false" obj-model="obj:#nightstand-obj;mtl:#nightstand-mtl" position="-0.15 0.5 -3" rotation="0 -90 -15" scale="0.5 0.5 0.5"></a-entity>

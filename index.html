@@ -171,7 +171,13 @@
 
       <!-- Jane -->
       <a-entity position="-4.5 1.5 -12" rotation="0 180 0">
-        <a-entity obj-model="obj:#girl-obj;mtl:#girl-mtl;" scale="10 10 10"></a-entity>
+        <a-entity>
+            <a-sphere position="0.164 -0.183 -0.273" scale="0.1 0.1 0.1" material="color:#171412" geometry=""></a-sphere>
+            <a-sphere position="-0.01 -0.2 0.04" scale="0.5 0.3 0.3" material="color:#feff62"></a-sphere>
+            <a-sphere position="-0.09 -0.18 -0.27" scale="0.1 0.1 0.1" material="color:#161311"></a-sphere>
+            <a-sphere position="0 -0.36 0" scale="0.4 0.4 0.4" material="color:#ffddc5"></a-sphere>
+            <a-box position="0 -1 0" scale="0.6 1 0.4" material="color:#ff918f" geometry=""></a-box>
+        </a-entity>
         <a-entity rotation="0 180 0">
             <a-entity id="button-defense" position="-0.5 0.5 1.5" geometry="primitive: plane; height: 0.2; width: 0.5" material="color:white; opacity: 0.8" text="width: 1; color: black; align: center; value: DEFENSE" defense hover-effect></a-entity>
             <a-entity id="button-talk" position="0.5 0.5 1.5" geometry="primitive: plane; height: 0.2; width: 0.5" material="color:white; opacity: 0.8" text="width: 1; color: black; align: center; value: TALK" talk hover-effect></a-entity>
@@ -231,7 +237,18 @@
         </a-entity>
         <!-- Self model for mirror -->
         <a-entity position="0 -1 2">
-          <a-entity obj-model="obj:#pony-obj;mtl:#pony-mtl;" position="0 0 0" rotation="0 90 0" scale="6 6 6"></a-entity>
+            <a-box position="-1 0.5 0.3" rotation="-2 4 -19" scale="1 0.135 0.468" material="color:#4f4f4f" geometry=""></a-box>
+            <a-box position="-1 -0.2 0.1" scale="1 0.135 0.4" material="color:#4f4f4f"></a-box>
+            <a-box position="-1 -1 -0.2" rotation="9 -5 44" scale="1 0.13 0.4" material="color:#4f4f4f"></a-box>
+            <a-box position="0.8 -0.8 -0.7" rotation="-2 12 -53" scale="1 0.13 0.4" material="color:#4f4f4f"></a-box>
+            <a-box position="1 0 -0.26" scale="1 0.13 0.4" material="color:#4f4f4f"></a-box>
+            <a-box position="1 0.5 -0.08" rotation="3 -3 18" scale="1 0.13 0.4" material="color:#4f4f4f"></a-box>
+            <a-sphere position="0 -0.3 -0.1" scale="1 1.57 1" material="color:#333333;height:100" geometry=""></a-sphere>
+            <a-sphere position="-0.05 1.3 0.1" scale="0.5 0.5 0.5" material="color:#333333;height:100"></a-sphere>
+            <a-sphere position="0.02 1.6 -0.3" scale="0.1 0.1 0.1" material="color:#ffffff;height:100"></a-sphere>
+            <a-sphere position="-0.3 1.6 -0.2" scale="0.1 0.1 0.1" material="color:#ffffff;height:100"></a-sphere>
+            <a-box></a-box>
+            <a-sphere></a-sphere>
         </a-entity>
         <!-- heart indicator -->
         <a-entity position="0 0.5 -1.5" id="john_heart" visible="false">
@@ -244,8 +261,8 @@
       </a-camera>
     </a-scene>
 
-    <script src="js/aframe/travel-node.js"></script>
-    <script src="js/aframe/travel-node-defaults.js"></script>
+    <script src="js/aframe/travel-node.min.js"></script>
+    <script src="js/aframe/travel-node-defaults.min.js"></script>
     <script src="js/aframe/aframe-mirror-component.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/scene-switch.js"></script>
